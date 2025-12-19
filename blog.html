@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Packaging & Printing Insights | Caihe Tech Blog</title>
+    <meta name="description" content="Expert guides on custom labeling, packaging machinery maintenance, and printing material selection. Industry insights from Caihe Tech factory.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles --- */
+        :root { 
+            --primary-green: #00b894; 
+            --deep-blue: #2d3436; 
+            --light-bg: #f5f6fa; 
+            --border: #e1e1e1;
+            --white: #ffffff;
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--deep-blue); line-height: 1.6; background: var(--light-bg); }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        img { max-width: 100%; display: block; }
+
+        /* --- 2. Header --- */
+        header { 
+            background: rgba(255,255,255,0.98); padding: 15px 5%; border-bottom: 1px solid #eee; 
+            display: flex; justify-content: space-between; align-items: center; 
+            position: sticky; top: 0; z-index: 999; backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary-green); }
+        .back-link { font-weight: 600; font-size: 0.9rem; color: #666; display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 4px; }
+        .back-link:hover { background: var(--light-bg); color: var(--primary-green); }
+
+        /* --- 3. Blog Hero --- */
+        .blog-header { 
+            position: relative;
+            background-color: var(--deep-blue); 
+            color: white; 
+            padding: 100px 5%; 
+            text-align: center; 
+            overflow: hidden;
+        }
+        .blog-header-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            /* 请准备 images/blog-hero.webp */
+            background-image: url('images/blog-hero.webp');
+            background-size: cover; background-position: center;
+            opacity: 0.4;
+        }
+        .blog-header-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .blog-header h1 { font-size: 3.5rem; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .blog-header p { font-size: 1.2rem; color: rgba(255,255,255,0.9); font-weight: 300; }
+
+        /* --- 4. Category Filter --- */
+        .category-nav { 
+            display: flex; justify-content: center; gap: 15px; 
+            margin-top: -30px; padding: 0 5%; flex-wrap: wrap; position: relative; z-index: 3;
+        }
+        .cat-btn { 
+            background: white; padding: 12px 30px; border-radius: 50px; 
+            font-weight: 700; color: #666; box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
+            cursor: pointer; border: 2px solid transparent; transition: 0.3s;
+        }
+        .cat-btn:hover, .cat-btn.active { color: white; background: var(--primary-green); border-color: var(--primary-green); transform: translateY(-2px); }
+
+        /* --- 5. Blog Grid --- */
+        .blog-container { 
+            max-width: 1200px; margin: 60px auto; padding: 0 5%; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 40px; 
+        }
+        
+        .blog-card { 
+            background: white; border-radius: 16px; overflow: hidden; transition: 0.3s; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; cursor: pointer;
+            border: 1px solid #eee;
+        }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--primary-green); }
+        
+        .card-img { height: 240px; overflow: hidden; position: relative; background: #ddd; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .blog-card:hover .card-img img { transform: scale(1.08); }
+        
+        .card-tag { 
+            position: absolute; top: 20px; left: 20px; 
+            background: rgba(255,255,255,0.95); color: var(--deep-blue); 
+            padding: 6px 12px; font-size: 0.75rem; font-weight: 800; border-radius: 4px; text-transform: uppercase;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .card-body { padding: 30px; flex: 1; display: flex; flex-direction: column; }
+        .card-date { font-size: 0.85rem; color: #999; margin-bottom: 10px; display: block; }
+        .card-title { font-size: 1.4rem; margin-bottom: 15px; line-height: 1.3; font-weight: 700; color: var(--deep-blue); }
+        .card-desc { font-size: 0.95rem; color: #666; margin-bottom: 25px; line-height: 1.6; flex: 1; }
+        
+        .read-more { 
+            color: var(--primary-green); font-weight: 700; font-size: 0.9rem; 
+            display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px; 
+        }
+        .read-more i { transition: 0.3s; font-size: 0.8rem; }
+        .blog-card:hover .read-more i { transform: translateX(5px); }
+
+        /* --- 6. Newsletter --- */
+        .newsletter { background: white; padding: 80px 5%; text-align: center; margin-top: 80px; border-top: 1px solid #eee; }
+        .news-input { padding: 15px; width: 300px; border: 1px solid #ddd; border-radius: 6px; margin-right: 10px; outline: none; transition: 0.3s; }
+        .news-input:focus { border-color: var(--primary-green); box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1); }
+        .news-btn { padding: 15px 35px; background: var(--primary-green); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .news-btn:hover { background: #009e7e; }
+
+        /* --- 7. Footer --- */
+        footer { background: #111; color: #888; padding: 40px 5%; text-align: center; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .blog-header { padding: 80px 5%; }
+            .blog-header h1 { font-size: 2.2rem; }
+            .blog-container { grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
+            .news-input { width: 100%; margin-bottom: 15px; margin-right: 0; }
+            .news-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-cube"></i> CAIHE<span>TECH</span></a>
+        <a href="index.html" class="back-link"><i class="fas fa-home"></i> Home</a>
+    </header>
+
+    <div class="blog-header">
+        <div class="blog-header-bg"></div>
+        <div class="blog-header-content">
+            <h1>Industry Knowledge Base</h1>
+            <p>Technical guides, cost-saving tips, and machinery maintenance advice from our engineering team.</p>
+        </div>
+    </div>
+
+    <!-- 分类筛选器 -->
+    <div class="category-nav">
+        <div class="cat-btn active" onclick="filterBlog('all', this)">All Posts</div>
+        <div class="cat-btn" onclick="filterBlog('printing', this)">Printing Guides</div>
+        <div class="cat-btn" onclick="filterBlog('machinery', this)">Machinery Tech</div>
+        <div class="cat-btn" onclick="filterBlog('material', this)">Materials</div>
+        <div class="cat-btn" onclick="filterBlog('sustainability', this)">Sustainability</div>
+    </div>
+
+    <div class="blog-container">
+        
+        <!-- 1. Roll vs Sheet -->
+        <article class="blog-card" data-category="printing" onclick="window.location.href='blog/article-001.html'">
+            <div class="card-img">
+                <span class="card-tag">Printing Guide</span>
+                <img src="images/blog-hero-roll-vs-sheet-labels.webp" alt="Roll vs Sheet Labels" onerror="this.src='https://placehold.co/600x400/eee/555?text=Roll+vs+Sheet'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Oct 24, 2025</span>
+                <h3 class="card-title">Roll Labels vs. Sheet Labels: Which Format Saves You Money?</h3>
+                <p class="card-desc">Scaling up? Switching to roll labels can save 40% in application time. See the cost breakdown.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 2. Bubble Issues -->
+        <article class="blog-card" data-category="machinery" onclick="window.location.href='blog/article-002.html'">
+            <div class="card-img">
+                <span class="card-tag" style="background:#0984e3;">Machinery Tech</span>
+                <img src="images/blog-hero-solving-bubble-issues.webp" alt="Labeling Machine Tips" onerror="this.src='https://placehold.co/600x400/dff9fb/0984e3?text=Bubble+Fix'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Oct 10, 2025</span>
+                <h3 class="card-title">How to Solve Bubble Issues in Automatic Labeling?</h3>
+                <p class="card-desc">Bubbles on clear labels? Check peel plate angle & roller pressure. 5 expert tips to fix it.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 3. BOPP vs Paper -->
+        <article class="blog-card" data-category="material" onclick="window.location.href='blog/article-003.html'">
+            <div class="card-img">
+                <span class="card-tag" style="background:#e67e22;">Materials</span>
+                <img src="images/blog-hero-bopp-vs-paper-material.webp" alt="BOPP Material" onerror="this.src='https://placehold.co/600x400/eee/555?text=BOPP+vs+Paper'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Sep 28, 2025</span>
+                <h3 class="card-title">BOPP vs. Paper: Choosing the Best Sticker Material</h3>
+                <p class="card-desc">For frozen food or shampoo bottles, paper fails. Learn why BOPP is the industry standard.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 4. Die Cut vs Kiss Cut -->
+        <article class="blog-card" data-category="printing" onclick="window.location.href='blog/article-004.html'">
+            <div class="card-img">
+                <span class="card-tag">Printing Guide</span>
+                <img src="images/blog-4.webp" alt="Die Cut vs Kiss Cut" onerror="this.src='https://placehold.co/600x400/eee/555?text=Die+Cut+Guide'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Sep 15, 2025</span>
+                <h3 class="card-title">Die Cut vs. Kiss Cut: What's the Difference?</h3>
+                <p class="card-desc">They look the same applied, but different on the backing. Which is better for your brand?</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 5. HP Indigo Benefits -->
+        <article class="blog-card" data-category="printing" onclick="window.location.href='blog/article-005.html'">
+            <div class="card-img">
+                <span class="card-tag">Technology</span>
+                <img src="images/blog-5.webp" alt="HP Indigo" onerror="this.src='https://placehold.co/600x400/eee/555?text=HP+Indigo'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Aug 30, 2025</span>
+                <h3 class="card-title">5 Benefits of HP Indigo Digital Printing for Small Business</h3>
+                <p class="card-desc">Zero plate fees and 97% Pantone matching. Why digital is perfect for short runs.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 6. Labeling Machine Choice -->
+        <article class="blog-card" data-category="machinery" onclick="window.location.href='blog/article-006.html'">
+            <div class="card-img">
+                <span class="card-tag" style="background:#0984e3;">Machinery Tech</span>
+                <img src="images/blog-6.webp" alt="Machine Selection" onerror="this.src='https://placehold.co/600x400/dff9fb/0984e3?text=Machine+Choice'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Aug 12, 2025</span>
+                <h3 class="card-title">How to Choose a Labeling Machine for Round Bottles?</h3>
+                <p class="card-desc">Semi-auto vs Fully-auto? Wrap-around or front-back? A complete buying guide.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 7. Sustainable Packaging -->
+        <article class="blog-card" data-category="sustainability" onclick="window.location.href='blog/article-007.html'">
+            <div class="card-img">
+                <span class="card-tag" style="background:#27ae60;">Sustainability</span>
+                <img src="images/blog-7.webp" alt="Eco Packaging" onerror="this.src='https://placehold.co/600x400/e8f5e9/27ae60?text=Eco+Friendly'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Jul 20, 2025</span>
+                <h3 class="card-title">Going Green: FSC Paper & Soy Ink for Eco Packaging</h3>
+                <p class="card-desc">Meet EU/US export standards with our sustainable materials. Reduce your carbon footprint.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 8. Variable Data Printing -->
+        <article class="blog-card" data-category="printing" onclick="window.location.href='blog/article-008.html'">
+            <div class="card-img">
+                <span class="card-tag">Technology</span>
+                <img src="images/blog-8.webp" alt="Variable Data" onerror="this.src='https://placehold.co/600x400/eee/555?text=QR+Codes'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Jul 05, 2025</span>
+                <h3 class="card-title">Variable Data Printing: Unique QR Codes for Every Label</h3>
+                <p class="card-desc">Track products and prevent counterfeiting with unique serial numbers on each sticker.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 9. Screen vs Flexo -->
+        <article class="blog-card" data-category="printing" onclick="window.location.href='blog/article-009.html'">
+            <div class="card-img">
+                <span class="card-tag">Printing Guide</span>
+                <img src="images/blog-9.webp" alt="Screen Printing" onerror="this.src='https://placehold.co/600x400/eee/555?text=Screen+vs+Flexo'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">Jun 18, 2025</span>
+                <h3 class="card-title">Screen Printing vs. Flexo: Which is Better for Premium Labels?</h3>
+                <p class="card-desc">Want tactile 3D varnish or high-opacity white? Discover why screen printing wins for luxury.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+        <!-- 10. Why Labels Peel Off -->
+        <article class="blog-card" data-category="machinery" onclick="window.location.href='blog/article-010.html'">
+            <div class="card-img">
+                <span class="card-tag" style="background:#e74c3c;">Troubleshooting</span>
+                <img src="images/blog-10.webp" alt="Label Peeling" onerror="this.src='https://placehold.co/600x400/ffcccc/e74c3c?text=Peeling+Issue'">
+            </div>
+            <div class="card-body">
+                <span class="card-date">May 30, 2025</span>
+                <h3 class="card-title">Why Do Labels Peel Off? Top 3 Reasons & Fixes</h3>
+                <p class="card-desc">Is it the adhesive, the surface, or the temperature? How to choose the right glue for your product.</p>
+                <span class="read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- 邮件订阅 -->
+    <div class="newsletter">
+        <h2 style="margin-bottom: 10px;">Don't Miss an Update</h2>
+        <p style="color:#666; margin-bottom: 30px;">Get our latest manufacturing guides delivered to your inbox.</p>
+        <form action="https://formspree.io/f/mnneryyq" method="POST" style="display:inline-block;">
+            <input type="email" name="email" class="news-input" placeholder="Enter your email" required>
+            <button type="submit" class="news-btn">Subscribe</button>
+        </form>
+    </div>
+
+    <footer style="background:#111; color:#888; padding:40px 5%; text-align:center;">
+        &copy; 2025 Caihe Tech. <a href="index.html" style="color:var(--primary-green);">Back to Home</a>
+    </footer>
+
+    <!-- 筛选脚本 -->
+    <script>
+        function filterBlog(category, btn) {
+            // 按钮高亮
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 卡片筛选
+            const cards = document.querySelectorAll('.blog-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

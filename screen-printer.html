@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Roll-to-Roll Screen Printing Machine | High Precision CCD | Caihe Tech</title>
+    <meta name="description" content="Automatic roll-to-roll screen printing machine for labels. Features CCD visual positioning for high precision. Ideal for 3D varnish, braille, and high opacity white ink. CE Certified.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles --- */
+        :root { 
+            --primary-green: #00b894; 
+            --deep-blue: #2d3436; 
+            --light-bg: #f5f6fa; 
+            --border: #e1e1e1;
+            --white: #ffffff;
+            --tech-blue: #0984e3; /* 机械蓝 */
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--deep-blue); line-height: 1.6; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- 2. Header --- */
+        header { 
+            padding: 15px 5%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; 
+            align-items: center; position: sticky; top:0; background: rgba(255,255,255,0.98); z-index: 999;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary-green); }
+        .back-link { font-weight: 600; font-size: 0.9rem; color: #666; display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 4px; }
+        .back-link:hover { background: var(--light-bg); color: var(--primary-green); }
+
+        /* --- 3. Layout --- */
+        .page-wrapper { max-width: 1280px; margin: 0 auto; padding: 40px 5%; }
+
+        /* --- 4. Hero Section --- */
+        .product-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        
+        .gallery-main {
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+            aspect-ratio: 4/3; background: #f9f9f9; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;
+        }
+        /* 防变形 */
+        .gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+
+        .gallery-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        .thumb { border-radius: 4px; border: 1px solid var(--border); cursor: pointer; opacity: 0.7; aspect-ratio: 1/1; object-fit: cover; transition: 0.2s; }
+        .thumb:hover { opacity: 1; border-color: var(--tech-blue); }
+
+        .info-col h1 { font-size: 2.5rem; margin: 0 0 10px; line-height: 1.1; }
+        .category-tag { background: #e3f2fd; color: #0984e3; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
+        
+        .highlights { margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .highlight-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; }
+        .highlight-item i { color: var(--tech-blue); }
+
+        .tech-box { border: 2px dashed var(--tech-blue); padding: 20px; border-radius: 8px; margin: 25px 0; background: #f0f8ff; }
+        .tech-box h3 { margin: 0; font-size: 1.1rem; color: var(--tech-blue); display: flex; align-items: center; gap: 10px; }
+
+        .action-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn-primary { 
+            flex: 2; background: var(--tech-blue); color: white; border: none; padding: 15px; 
+            border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; text-align: center; 
+            display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+        }
+        .btn-secondary {
+            flex: 1; background: white; color: var(--deep-blue); border: 2px solid var(--deep-blue); padding: 15px;
+            border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; text-align: center; 
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .btn-primary:hover { background: #0069d9; transform: translateY(-2px); }
+        .btn-secondary:hover { background: var(--light-bg); }
+
+        /* --- 5. Trust Bar (实装版) --- */
+        .trust-bar { margin-bottom: 60px; padding: 30px 0; background: transparent; border-bottom: 1px solid #eee; border-top: 1px solid #eee; text-align: center; }
+        .trust-title { font-size: 0.85rem; color: #999; margin-bottom: 25px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+        .trust-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; align-items: center; }
+        .trust-logo { height: 55px; width: auto; object-fit: contain; filter: none; opacity: 1; transition: 0.3s; }
+        .trust-logo:hover { transform: scale(1.1); }
+
+        /* --- 6. Components (Logo Wall) --- */
+        .component-section { margin-bottom: 80px; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: #666; max-width: 700px; margin: 0 auto 40px; }
+        
+        .comp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .comp-card { 
+            border: 1px solid #eee; padding: 25px; border-radius: 8px; text-align: center; 
+            background: #fff; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .comp-card:hover { border-color: var(--tech-blue); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .comp-logo-wrapper { height: 60px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+        .comp-logo-wrapper img { max-height: 100%; max-width: 80%; object-fit: contain; filter: none; opacity: 1; }
+        .comp-title { font-weight: 700; color: var(--deep-blue); font-size: 0.9rem; margin-bottom: 5px; }
+        .comp-desc { color: #888; font-size: 0.8rem; }
+
+        /* --- 7. Comparison Table --- */
+        .table-section { margin-bottom: 80px; }
+        .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; border: 1px solid #eee; }
+        .vs-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .vs-table th, .vs-table td { padding: 18px; text-align: left; border-bottom: 1px solid #eee; }
+        .vs-table th { background: var(--light-bg); color: var(--deep-blue); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+        .col-us { background: #f0f8ff; border-left: 3px solid var(--tech-blue); font-weight: 600; color: var(--deep-blue); }
+        .col-others { color: #999; }
+
+        /* --- 8. Visual Effects (What Can You Print?) --- */
+        .effect-section { margin-bottom: 80px; }
+        .effect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        
+        .effect-card { 
+            border: 1px solid #eee; border-radius: 12px; overflow: hidden; transition: 0.3s; 
+            display: flex; flex-direction: column; background: white;
+        }
+        .effect-card:hover { border-color: var(--tech-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-5px); }
+        
+        .effect-img { 
+            height: 200px; background: #f9f9f9; 
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        /* 工艺细节图用 cover 铺满展示纹理 */
+        .effect-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .effect-card:hover .effect-img img { transform: scale(1.1); }
+        
+        .effect-body { padding: 25px; flex: 1; text-align: left; }
+        .effect-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: var(--deep-blue); }
+        .effect-desc { color: #666; font-size: 0.9rem; margin: 0; }
+
+        /* --- 9. Advanced Features (Grid) --- */
+        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 80px; }
+        .feature-card { padding: 30px; border: 1px solid #eee; border-radius: 8px; text-align: center; transition: 0.3s; background: white; }
+        .feature-card:hover { border-color: var(--tech-blue); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .feature-icon { font-size: 2.5rem; color: var(--tech-blue); margin-bottom: 20px; }
+        .feature-title { font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; }
+        .feature-desc { color: #666; font-size: 0.9rem; }
+
+        /* --- 10. After-sales --- */
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px; }
+        .service-card { background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: left; border-left: 4px solid var(--tech-blue); transition: 0.3s; }
+        .service-card:hover { background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .service-card h4 { margin: 0 0 10px 0; color: var(--deep-blue); font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .service-card p { margin: 0; color: #666; font-size: 0.9rem; }
+
+        /* --- 11. Specs Table --- */
+        .specs-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .specs-table th, .specs-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        .specs-table th { background: var(--light-bg); width: 35%; font-weight: 700; color: var(--deep-blue); }
+
+        /* --- 12. FAQ --- */
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 30px; margin-bottom: 80px; }
+        .faq-item { background: #f9f9f9; padding: 30px; border-radius: 8px; border-left: 4px solid var(--border); transition:0.3s; }
+        .faq-item:hover { border-left-color: var(--tech-blue); background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .faq-q { font-weight: 700; margin-bottom: 12px; color: var(--deep-blue); display: flex; gap: 10px; }
+        .faq-a { color: #666; font-size: 0.95rem; line-height: 1.6; margin-left: 20px; }
+
+        /* --- 13. Inquiry --- */
+        #inquiry { max-width: 800px; margin: 0 auto; padding: 50px; border: 1px solid #eee; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); background: white; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-input:focus { border-color: var(--tech-blue); box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.1); }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .page-wrapper { padding: 30px 5%; }
+            .product-hero { grid-template-columns: 1fr; gap: 30px; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .trust-logo { height: 50px; }
+            .action-btns { flex-direction: column; }
+            .comp-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .effect-grid { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .service-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            #inquiry { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-cube"></i> CAIHE<span>TECH</span></a>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+    </header>
+
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="product-hero">
+            <!-- Gallery -->
+            <div>
+                <div class="gallery-main">
+                    <!-- 请确保 images/product-screen-printer.webp 存在 -->
+                    <img src="images/screen-printer-hero.webp" id="mainImage" alt="Roll-to-Roll Screen Printer">
+                </div>
+                <div class="gallery-thumbs">
+                    <!-- 预留细节图 -->
+                    <img src="images/screen-printer-printer.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Printer'">
+                    <img src="images/screen-printer-effect.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Effect'">
+                    <img src="images/screen-printer-sample.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=CCD'">
+                    <img src="images/screen-printer-ccd.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=UV'">
+                    <img src="images/screen-printer-uv-dry.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Sample'">
+                </div>
+            </div>
+
+            <div class="info-col">
+                <span class="category-tag">Machinery / Screen Printing</span>
+                <h1>Auto Roll-to-Roll Screen Printer</h1>
+                <p style="color:#666; font-size:1.05rem; margin-bottom: 20px;">
+                    The ultimate machine for premium labels. Achieve <strong>High Opacity White</strong>, <strong>3D Varnish</strong>, and <strong>Braille Effects</strong> that flexo cannot do.
+                </p>
+
+                <div class="highlights">
+                    <div class="highlight-item"><i class="fas fa-eye"></i> CCD Visual Positioning</div>
+                    <div class="highlight-item"><i class="fas fa-sun"></i> UV Curing System</div>
+                    <div class="highlight-item"><i class="fas fa-layer-group"></i> Thick Ink Deposit</div>
+                    <div class="highlight-item"><i class="fas fa-registered"></i> Precision ±0.05mm</div>
+                </div>
+
+                <div class="tech-box">
+                    <h3><i class="fas fa-gem"></i> High Value Addition</h3>
+                    <p style="margin:5px 0 0; color:#555; font-size:0.9rem;">
+                        Ideal for luxury Wine, Cosmetic, and Pharmaceutical labels. Create unique tactile textures that boost brand value.
+                    </p>
+                </div>
+
+                <div class="action-btns">
+                    <a href="#inquiry" class="btn-primary">Get Machine Price</a>
+                    <a href="https://wa.me/8619120719547" class="btn-secondary"><i class="fab fa-whatsapp"></i> Video Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Bar (实装版) -->
+        <div class="trust-bar">
+            <div class="trust-title">CERTIFIED QUALITY YOU CAN TRUST</div>
+            <div class="trust-grid">
+                <img src="images/cert-iso-9001.webp" alt="ISO 9001" class="trust-logo">
+                <img src="images/cert-fsc.webp" alt="FSC" class="trust-logo">
+                <img src="images/cert-ul.webp" alt="UL" class="trust-logo">
+                <img src="images/cert-ce.webp" alt="CE" class="trust-logo">
+            </div>
+        </div>
+
+        <!-- 2. Components (Logo Wall - 实装) -->
+        <div class="component-section">
+            <h2 class="section-title">World-Class Components</h2>
+            <p class="section-subtitle">Premium parts for stable, 24/7 production.</p>
+            
+            <div class="comp-grid">
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <!-- 请准备 images/logo-yaskawa.webp -->
+                        <img src="images/logo-yaskawa.webp" alt="Yaskawa" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=Yaskawa'">
+                    </div>
+                    <div class="comp-title">Servo Motor</div>
+                    <p class="comp-desc">Japan (High Torque)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <img src="images/logo-panasonic.webp" alt="Panasonic" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=Panasonic'">
+                    </div>
+                    <div class="comp-title">PLC Control</div>
+                    <p class="comp-desc">Japan (Smart System)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <img src="images/logo-sick.webp" alt="SICK" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=SICK'">
+                    </div>
+                    <div class="comp-title">Color Sensor</div>
+                    <p class="comp-desc">Germany (Auto Register)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <img src="images/logo-hiwin.webp" alt="HIWIN" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=HIWIN'">
+                    </div>
+                    <div class="comp-title">Linear Rail</div>
+                    <p class="comp-desc">Taiwan (Precision)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Why Screen Printing? (Comparison) -->
+        <div class="table-section">
+            <h2 class="section-title">Why Choose Screen Printing?</h2>
+            <div class="table-wrapper">
+                <table class="vs-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">Effect / Capability</th>
+                            <th style="width: 30%;">Flexo / Digital</th>
+                            <th style="width: 30%; color: var(--tech-blue);">Screen Printing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ink Thickness</strong><br><span style="font-size:0.8rem; font-weight:400;">Color vibrance & opacity</span></td>
+                            <td class="col-others">Thin (2-3 microns)</td>
+                            <td class="col-us">Very Thick (10-50 microns)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tactile Effect</strong><br><span style="font-size:0.8rem; font-weight:400;">Can you feel the print?</span></td>
+                            <td class="col-others">Flat</td>
+                            <td class="col-us">3D Raised / Braille</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Opacity on Clear</strong><br><span style="font-size:0.8rem; font-weight:400;">Printing white on transparent</span></td>
+                            <td class="col-others">Semi-transparent</td>
+                            <td class="col-us">100% Solid Opaque</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Durability</strong><br><span style="font-size:0.8rem; font-weight:400;">Outdoor resistance</span></td>
+                            <td class="col-others">Medium</td>
+                            <td class="col-us">Extreme Durability</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. Visual Effects (What Can You Print?) -->
+        <div class="effect-section">
+            <h2 class="section-title">What Can You Print?</h2>
+            <p class="section-subtitle">Create premium effects for your labels.</p>
+            
+            <div class="effect-grid">
+                <!-- 3D Varnish -->
+                <div class="effect-card">
+                    <div class="effect-img">
+                        <!-- 请准备 images/effect-varnish.webp -->
+                        <img src="images/screen-print-varnish.webp" alt="3D Varnish" onerror="this.src='https://placehold.co/400x300/dff9fb/0984e3?text=3D+Varnish'">
+                    </div>
+                    <div class="effect-body">
+                        <div class="effect-title">Spot Varnish (3D)</div>
+                        <p class="effect-desc">Thick, glossy raised effect that highlights logos. Great for wine labels.</p>
+                    </div>
+                </div>
+
+                <!-- High Opacity White -->
+                <div class="effect-card">
+                    <div class="effect-img">
+                        <!-- 请准备 images/effect-white.webp -->
+                        <img src="images/screen-print-opaque-white.webp" alt="Opaque White" onerror="this.src='https://placehold.co/400x300/dff9fb/0984e3?text=Opaque+White'">
+                    </div>
+                    <div class="effect-body">
+                        <div class="effect-title">High Opacity White</div>
+                        <p class="effect-desc">Solid white ink on clear film. No "see-through" issues like digital print.</p>
+                    </div>
+                </div>
+
+                <!-- Braille -->
+                <div class="effect-card">
+                    <div class="effect-img">
+                        <!-- 请准备 images/effect-braille.webp -->
+                        <img src="images/screen-print-braille.webp" alt="Braille" onerror="this.src='https://placehold.co/400x300/dff9fb/0984e3?text=Braille'">
+                    </div>
+                    <div class="effect-body">
+                        <div class="effect-title">Braille / Warning</div>
+                        <p class="effect-desc">Tactile warning triangles for chemical/pharma labels. Compliant with EU laws.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Advanced Features -->
+        <div class="feature-section">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-crosshairs"></i></div>
+                    <div class="feature-title">CCD Registration</div>
+                    <p class="feature-desc">Cameras monitor the web for perfect multi-color alignment (±0.05mm).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sun"></i></div>
+                    <div class="feature-title">UV Curing</div>
+                    <p class="feature-desc">Instant drying system. Ink hardens immediately for high speed production.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                    <div class="feature-title">Second Pass</div>
+                    <p class="feature-desc">Can re-print over existing labels (e.g. adding varnish to digital prints).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. After-sales -->
+        <div class="feature-section">
+            <h2 class="section-title">Worry-Free After Sales</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h4><i class="fas fa-video"></i> Remote Installation</h4>
+                    <p>Step-by-step video guidance to set up the mesh frame, ink flow, and CCD camera system.</p>
+                </div>
+                <div class="service-card">
+                    <h4><i class="fas fa-tools"></i> Spare Parts Ready</h4>
+                    <p>We stock UV lamps, squeegees, and screen frames. Fast shipping via DHL to your factory.</p>
+                </div>
+                <div class="service-card">
+                    <h4><i class="fas fa-user-headset"></i> Engineer Support</h4>
+                    <p>Lifetime technical support. Our engineers can remotely debug software issues.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Specs Table -->
+        <div style="max-width:900px; margin:0 auto 80px;">
+            <h2 class="section-title" style="margin-bottom:20px;">Technical Specifications</h2>
+            <table class="specs-table">
+                <tr><th>Max Printing Area</th><td>300mm x 400mm (Standard)</td></tr>
+                <tr><th>Max Web Width</th><td>320mm</td></tr>
+                <tr><th>Printing Speed</th><td>1500 - 3000 impressions/hour</td></tr>
+                <tr><th>Substrate Thickness</th><td>0.05mm - 0.3mm (PVC, PET, Paper)</td></tr>
+                <tr><th>Machine Dimensions</th><td>2800 x 1100 x 1600 mm</td></tr>
+                <tr><th>Power Supply</th><td>380V 3-Phase / 220V Single Phase (Optional)</td></tr>
+                <tr><th>Weight</th><td>1500 KG</td></tr>
+            </table>
+        </div>
+
+        <!-- 8. FAQ -->
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> What inks can I use?</div>
+                    <div class="faq-a">The machine is designed for <strong>UV Inks</strong> which cure instantly. It also supports Solvent inks with an optional hot air dryer tunnel.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> Can it print Braille?</div>
+                    <div class="faq-a">Yes! By using a thick screen mesh and high-build varnish, you can easily print tactile Braille warning triangles for pharmaceutical labels.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> How precise is the registration?</div>
+                    <div class="faq-a">With the <strong>CCD Camera System</strong>, we achieve ±0.05mm accuracy, allowing you to overprint perfectly on pre-printed digital labels.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> Is it easy to change screens?</div>
+                    <div class="faq-a">Yes, the screen frame holder is designed for quick changeovers. An experienced operator can switch jobs in 15-20 minutes.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. Inquiry -->
+        <div id="inquiry">
+            <h2 class="section-title" style="margin-bottom:10px;">Get Machine Quote</h2>
+            <p style="text-align:center; color:#666; margin-bottom:30px;">Direct Factory Price. Global Shipping.</p>
+            
+            <form action="https://formspree.io/f/mnneryyq" method="POST">
+                <input type="hidden" name="source" value="Screen Printer Page">
+                
+                <div class="form-row">
+                    <input type="email" name="email" class="form-input" placeholder="Business Email *" required>
+                    <input type="text" name="name" class="form-input" placeholder="Your Name">
+                </div>
+                
+                <textarea name="message" class="form-input" placeholder="I am interested in the Roll-to-Roll Screen Printer..." style="height:120px; margin-bottom:20px;"></textarea>
+                
+                <button type="submit" class="btn-primary" style="width:100%;">Send Inquiry Now</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer style="text-align:center; padding:40px; color:#999; font-size:0.9rem; margin-top:50px;">
+        &copy; 2025 Caihe Tech. <a href="index.html" style="color:var(--tech-blue);">Back to Home</a>
+    </footer>
+
+</body>
+</html>

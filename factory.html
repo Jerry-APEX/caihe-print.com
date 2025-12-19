@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Caihe Tech | 18-Year Printing & Machinery Factory in Dongguan</title>
+    <meta name="description" content="Caihe Tech is unique: A printing factory that builds its own machines. 18 years of frontline production experience ensures our Labeling Machines & Die Cutters are practical and durable.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles --- */
+        :root { 
+            --primary-green: #00b894; 
+            --deep-blue: #2d3436; 
+            --light-bg: #f5f6fa; 
+            --border: #e1e1e1;
+            --white: #ffffff;
+            --tech-blue: #0984e3;
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--deep-blue); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- 2. Header --- */
+        header { 
+            padding: 15px 5%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; 
+            align-items: center; position: sticky; top:0; background: rgba(255,255,255,0.98); z-index: 999;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary-green); }
+        .back-link { font-weight: 600; font-size: 0.9rem; color: #666; display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 4px; }
+        .back-link:hover { background: var(--light-bg); color: var(--primary-green); }
+
+        /* --- 3. Hero Section --- */
+        .page-header { 
+            background: var(--deep-blue); color: white; padding: 100px 5%; text-align: center; 
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/factory-overview.webp');
+            background-size: cover; background-position: center;
+        }
+        .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .page-header p { font-size: 1.3rem; color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto; }
+
+        /* --- 4. Trust Bar --- */
+        .trust-bar { padding: 40px 5%; border-bottom: 1px solid #eee; background: white; }
+        .trust-grid { 
+            max-width: 1000px; margin: 0 auto; 
+            display: grid; grid-template-columns: repeat(4, 1fr); 
+            gap: 40px; align-items: center; justify-items: center;
+        }
+        .trust-logo { height: 60px; width: auto; object-fit: contain; opacity: 1; transition: 0.3s; }
+        .trust-logo:hover { transform: scale(1.05); }
+
+        /* --- 5. Intro Grid --- */
+        .section { padding: 80px 5%; max-width: 1280px; margin: 0 auto; }
+        .intro-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
+        
+        .intro-text h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--deep-blue); }
+        .intro-text h3 { color: var(--primary-green); font-size: 1.4rem; margin-bottom: 20px; border-left: 4px solid var(--deep-blue); padding-left: 15px; }
+        
+        .advantage-list { list-style: none; padding: 0; margin: 30px 0; }
+        .advantage-list li { margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; }
+        .advantage-list i { color: var(--primary-green); font-size: 1.2rem; margin-top: 3px; }
+        .advantage-list strong { color: var(--deep-blue); font-size: 1.05rem; }
+        
+        .quote-box { background: #f0fdf4; padding: 25px; border-radius: 12px; border-left: 4px solid var(--primary-green); font-style: italic; color: #555; font-size: 1.1rem; }
+        
+        .intro-img { 
+            border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            height: 450px; background: #eee;
+        }
+        .intro-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- 6. Stats Bar --- */
+        .stats-bar { background: var(--light-bg); padding: 60px 5%; margin: 60px 0; }
+        .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .stat-item h3 { font-size: 3rem; color: var(--primary-green); margin: 0; line-height: 1; }
+        .stat-item p { font-weight: 700; color: #666; margin: 10px 0 0; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+
+        /* --- 7. Production Power --- */
+        .machine-section { background: white; padding: 80px 5%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: var(--deep-blue); }
+        
+        .power-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1280px; margin: 0 auto; }
+        
+        .power-col h3 { font-size: 1.8rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+        .power-col h3 i { color: var(--primary-green); }
+        
+        .machine-grid { display: grid; gap: 20px; }
+        
+        .machine-card { 
+            display: flex; gap: 20px; padding: 20px; border: 1px solid #eee; border-radius: 12px; 
+            transition: 0.3s; background: white; align-items: center;
+        }
+        .machine-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary-green); }
+        
+        .machine-img { width: 120px; height: 120px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #f9f9f9; }
+        .machine-img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .machine-info h4 { margin: 0 0 5px; font-size: 1.2rem; color: var(--deep-blue); }
+        .machine-info p { margin: 0; font-size: 0.9rem; color: #666; line-height: 1.5; }
+        .machine-badge { display: inline-block; background: var(--light-bg); padding: 3px 8px; font-size: 0.75rem; border-radius: 4px; margin-top: 8px; font-weight: 600; color: #555; }
+
+        /* --- 8. Quality Control --- */
+        .qc-section { background: var(--light-bg); padding: 80px 5%; text-align: center; }
+        .qc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        
+        .qc-card { background: white; border-radius: 16px; overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+        .qc-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        
+        .qc-img { height: 250px; overflow: hidden; position: relative; }
+        .qc-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .qc-card:hover .qc-img img { transform: scale(1.05); }
+        
+        .qc-info { padding: 30px; text-align: left; }
+        .qc-info h3 { margin: 0 0 10px; font-size: 1.4rem; color: var(--deep-blue); }
+        .qc-info p { font-size: 0.95rem; color: #666; line-height: 1.6; margin: 0; }
+        .qc-icon { 
+            position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; 
+            background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--primary-green); font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- 9. Timeline --- */
+        .timeline-section { padding: 80px 5%; max-width: 1000px; margin: 0 auto; }
+        .tl-item { display: flex; gap: 30px; margin-bottom: 30px; }
+        .tl-year { font-size: 1.5rem; font-weight: 900; color: var(--primary-green); min-width: 80px; text-align: right; }
+        .tl-content { padding-left: 30px; border-left: 2px solid #eee; padding-bottom: 30px; position: relative; }
+        .tl-content::before { content: ""; width: 12px; height: 12px; background: var(--primary-green); position: absolute; left: -7px; top: 8px; border-radius: 50%; }
+        .tl-content p { color: #666; margin: 5px 0 0; }
+        .tl-item:last-child .tl-content { border-left: none; }
+
+        /* --- 10. WhatsApp Contact (New!) --- */
+        .wa-section { 
+            background: linear-gradient(135deg, #00b894 0%, #009e7e 100%); 
+            color: white; padding: 60px 5%; text-align: center; 
+            margin-top: 50px;
+        }
+        .wa-container { max-width: 700px; margin: 0 auto; }
+        .wa-section h2 { color: white; margin-bottom: 15px; font-size: 2.2rem; }
+        .wa-section p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
+        
+        .wa-btn { 
+            display: inline-flex; align-items: center; gap: 10px;
+            background: white; color: var(--primary-green); 
+            padding: 15px 40px; border-radius: 50px; 
+            font-weight: 800; font-size: 1.2rem; 
+            text-decoration: none; transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .wa-btn i { font-size: 1.5rem; }
+        .wa-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+
+        /* --- 11. Footer --- */
+        footer { background: #111; color: #888; padding: 40px 5%; text-align: center; }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .page-header h1 { font-size: 2.2rem; }
+            .intro-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .trust-logo { height: 50px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .power-container { grid-template-columns: 1fr; }
+            .qc-grid { grid-template-columns: 1fr; }
+            .tl-item { gap: 15px; }
+            .tl-year { font-size: 1.2rem; min-width: 60px; }
+            .wa-section h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-cube"></i> CAIHE<span>TECH</span></a>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </header>
+
+    <div class="page-header">
+        <h1>18 Years of Excellence</h1>
+        <p>From a small printing workshop to a global packaging automation leader.</p>
+    </div>
+
+    <!-- 1. Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-grid">
+            <img src="images/cert-iso-9001.webp" alt="ISO 9001" class="trust-logo">
+            <img src="images/cert-fsc.webp" alt="FSC" class="trust-logo">
+            <img src="images/cert-ul.webp" alt="UL" class="trust-logo">
+            <img src="images/cert-ce.webp" alt="CE" class="trust-logo">
+        </div>
+    </div>
+
+    <!-- 2. Dual Identity Advantage -->
+    <section class="section">
+        <div class="intro-grid">
+            <div class="intro-text">
+                <h2>Why We Are Different?</h2>
+                <h3>We Are A Printing Factory That Builds Machines.</h3>
+                <p>Most machinery suppliers are just traders or pure mechanical engineers—they don't know how labels behave on a high-speed line. <strong>We do.</strong></p>
+                <p>Because we run a printing factory, we use our own machines every day. We understand the pain points of production better than anyone else.</p>
+                
+                <ul class="advantage-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Frontline Experience:</strong><br>
+                            We use our own Die Cutters and Labelers daily to produce millions of stickers.
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Professional Tuning:</strong><br>
+                            Our engineers fine-tune machines based on real material behavior (tension, glue thickness).
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Guaranteed Compatibility:</strong><br>
+                            Buy labels and machines from us, and we guarantee 100% fit. No jamming.
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="quote-box">
+                    "We build machines that we love to use ourselves. That's why they work better for you."
+                </div>
+            </div>
+            <div class="intro-img">
+                <img src="images/factory-overview.webp" alt="Factory Overview" onerror="this.src='https://placehold.co/600x500/eee/999?text=Factory+Real+Shot'">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Stats -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>18+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>20k</h3>
+                <p>Sqm Production Base</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Global Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Self-Owned Factory</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Production Power -->
+    <section class="machine-section">
+        <h2 class="section-title">Integrated Production Power</h2>
+        <p class="section-subtitle">We own the complete supply chain.</p>
+        
+        <div class="power-container">
+            
+            <!-- Left: Printing -->
+            <div class="power-col">
+                <h3><i class="fas fa-print"></i> Premium Printing Fleet</h3>
+                <div class="machine-grid">
+                    <div class="machine-card">
+                        <div class="machine-img">
+                            <img src="images/machine-hp-indigo.webp" alt="HP Indigo" onerror="this.src='https://placehold.co/150x150/eee/555?text=HP+Indigo'">
+                        </div>
+                        <div class="machine-info">
+                            <h4>HP Indigo 25K</h4>
+                            <p>Digital press for short-run flexible packaging and labels. No plate fees.</p>
+                            <span class="machine-badge">Digital</span>
+                        </div>
+                    </div>
+                    <div class="machine-card">
+                        <div class="machine-img">
+                            <img src="images/machine-heidelberg.webp" alt="Heidelberg" onerror="this.src='https://placehold.co/150x150/eee/555?text=Heidelberg'">
+                        </div>
+                        <div class="machine-info">
+                            <h4>Heidelberg XL 105</h4>
+                            <p>Offset giant for mass production. Unbeatable cost efficiency for large orders.</p>
+                            <span class="machine-badge">Offset</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Machinery -->
+            <div class="power-col">
+                <h3 style="color:var(--tech-blue);"><i class="fas fa-cogs"></i> Machinery Manufacturing</h3>
+                <div class="machine-grid">
+                    <div class="machine-card" style="border-left:4px solid var(--tech-blue);">
+                        <div class="machine-img">
+                            <img src="images/machine-assembly.webp" alt="Assembly Line" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Assembly'">
+                        </div>
+                        <div class="machine-info">
+                            <h4>Assembly Line</h4>
+                            <p>Dedicated workshop for Die Cutters and Labeling Machines. ISO 9001 QC.</p>
+                            <span class="machine-badge" style="background:#e3f2fd; color:#0984e3;">Automation</span>
+                        </div>
+                    </div>
+                    <div class="machine-card" style="border-left:4px solid var(--tech-blue);">
+                        <div class="machine-img">
+                            <img src="images/machine-cnc.webp" alt="CNC Parts" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=CNC'">
+                        </div>
+                        <div class="machine-info">
+                            <h4>Precision CNC</h4>
+                            <p>We manufacture core components in-house to ensure machine stability.</p>
+                            <span class="machine-badge" style="background:#e3f2fd; color:#0984e3;">Precision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Quality Control -->
+    <section class="qc-section">
+        <h2 class="section-title">Strict Quality Control</h2>
+        <p class="section-subtitle">We don't just check quality; we engineer it.</p>
+        
+        <div class="qc-grid">
+            <div class="qc-card">
+                <div class="qc-img">
+                    <img src="images/qc-lab.webp" alt="Lab Testing" onerror="this.src='https://placehold.co/300x250/eee/555?text=Material+Lab'">
+                    <div class="qc-icon"><i class="fas fa-microscope"></i></div>
+                </div>
+                <div class="qc-info">
+                    <h3>Raw Material Lab</h3>
+                    <p>We test every roll of paper for adhesive strength and thickness before it enters production. No weak glue allowed.</p>
+                </div>
+            </div>
+            
+            <div class="qc-card">
+                <div class="qc-img">
+                    <img src="images/qc-print.webp" alt="AVT Inspection" onerror="this.src='https://placehold.co/300x250/eee/555?text=AVT+Inspection'">
+                    <div class="qc-icon"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="qc-info">
+                    <h3>100% Visual Inspection</h3>
+                    <p>Our HP Indigo is equipped with AVT automatic inspection system to detect even 0.1mm print defects.</p>
+                </div>
+            </div>
+            
+            <div class="qc-card">
+                <div class="qc-img">
+                    <img src="images/qc-machine.webp" alt="72h Aging" onerror="this.src='https://placehold.co/300x250/eee/555?text=72h+Test'">
+                    <div class="qc-icon"><i class="fas fa-history"></i></div>
+                </div>
+                <div class="qc-info">
+                    <h3>72-Hour Aging Test</h3>
+                    <p>Every labeling machine must run continuously for 72 hours before packing to ensure motor stability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Timeline -->
+    <section class="timeline-section">
+        <h2 class="section-title">Our Growth Path</h2>
+        <div class="tl-item">
+            <div class="tl-year">2005</div>
+            <div class="tl-content"><strong>Established Caihe Printing</strong><p>Started as a small workshop focusing on manuals & paper boxes.</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-year">2010</div>
+            <div class="tl-content"><strong>Label Division</strong><p>Acquired Rotary Flexo press. Started serving FMCG brands.</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-year">2018</div>
+            <div class="tl-content"><strong>Digital Transformation</strong><p>Invested in HP Indigo 25K. Short-run customization became possible.</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-year">2022</div>
+            <div class="tl-content"><strong>Machinery Division</strong><p>Launched automation line. Manufacturing Die Cutters & Labelers.</p></div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-year">2025</div>
+            <div class="tl-content"><strong>Global Expansion</strong><p>Building a worldwide "Print + Automation" ecosystem.</p></div>
+        </div>
+    </section>
+
+    <!-- NEW: WhatsApp Contact Section -->
+    <section class="wa-section">
+        <div class="wa-container">
+            <h2>Ready to Optimize Your Production?</h2>
+            <p>Talk to our experts directly. No middleman, factory direct response in 10 mins.</p>
+            <a href="https://wa.me/8619120719547" class="wa-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer style="background:#111; color:#888; padding:40px 5%; text-align:center;">
+        &copy; 2025 Caihe Tech. <a href="index.html" style="color:var(--primary-green);">Back to Home</a>
+    </footer>
+
+</body>
+</html>

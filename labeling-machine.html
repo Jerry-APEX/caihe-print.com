@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Automatic Labeling Machines | Round Bottle & Flat Surface | Caihe Tech</title>
+    <meta name="description" content="High-speed labeling machines for bottles, jars, and bags. Semi-auto and full automatic lines. Powered by Panasonic motors and Sick sensors. CE Certified.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles --- */
+        :root { 
+            --primary-green: #00b894; 
+            --deep-blue: #2d3436; 
+            --light-bg: #f5f6fa; 
+            --border: #e1e1e1;
+            --white: #ffffff;
+            --tech-blue: #0984e3; /* 机械蓝 */
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--deep-blue); line-height: 1.6; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- 2. Header --- */
+        header { 
+            padding: 15px 5%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; 
+            align-items: center; position: sticky; top:0; background: rgba(255,255,255,0.98); z-index: 999;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary-green); }
+        .back-link { font-weight: 600; font-size: 0.9rem; color: #666; display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 4px; }
+        .back-link:hover { background: var(--light-bg); color: var(--primary-green); }
+
+        /* --- 3. Layout --- */
+        .page-wrapper { max-width: 1280px; margin: 0 auto; padding: 40px 5%; }
+
+        /* --- 4. Hero Section --- */
+        .product-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        
+        .gallery-main {
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+            aspect-ratio: 4/3; background: #f9f9f9; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;
+        }
+        /* 防变形 */
+        .gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+
+        .gallery-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        .thumb { border-radius: 4px; border: 1px solid var(--border); cursor: pointer; opacity: 0.7; aspect-ratio: 1/1; object-fit: cover; transition: 0.2s; }
+        .thumb:hover { opacity: 1; border-color: var(--tech-blue); }
+
+        .info-col h1 { font-size: 2.5rem; margin: 0 0 10px; line-height: 1.1; }
+        .category-tag { background: #e3f2fd; color: #0984e3; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
+        
+        .highlights { margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .highlight-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; }
+        .highlight-item i { color: var(--tech-blue); }
+
+        .promo-box { border: 2px dashed var(--tech-blue); padding: 20px; border-radius: 8px; margin: 25px 0; background: #f0f8ff; }
+        .promo-box h3 { margin: 0; font-size: 1.1rem; color: var(--tech-blue); display: flex; align-items: center; gap: 10px; }
+
+        .action-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn-primary { 
+            flex: 2; background: var(--tech-blue); color: white; border: none; padding: 15px; 
+            border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; text-align: center; 
+            display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+        }
+        .btn-secondary {
+            flex: 1; background: white; color: var(--deep-blue); border: 2px solid var(--deep-blue); padding: 15px;
+            border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; text-align: center; 
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .btn-primary:hover { background: #0069d9; transform: translateY(-2px); }
+        .btn-secondary:hover { background: var(--light-bg); }
+
+        /* --- 5. Trust Bar (实装版) --- */
+        .trust-bar { margin-bottom: 60px; padding: 30px 0; background: transparent; border-bottom: 1px solid #eee; border-top: 1px solid #eee; text-align: center; }
+        .trust-title { font-size: 0.85rem; color: #999; margin-bottom: 25px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+        .trust-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; align-items: center; }
+        .trust-logo { height: 55px; width: auto; object-fit: contain; filter: none; opacity: 1; transition: 0.3s; }
+        .trust-logo:hover { transform: scale(1.1); }
+
+        /* --- 6. Components (Logo Wall - 实装) --- */
+        .component-section { margin-bottom: 80px; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: #666; max-width: 700px; margin: 0 auto 40px; }
+        
+        .comp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .comp-card { 
+            border: 1px solid #eee; padding: 25px; border-radius: 8px; text-align: center; 
+            background: #fff; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .comp-card:hover { border-color: var(--tech-blue); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        
+        /* Logo 区域 */
+        .comp-logo-wrapper { height: 60px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+        .comp-logo-wrapper img { max-height: 100%; max-width: 80%; object-fit: contain; filter: none; opacity: 1; }
+        
+        .comp-title { font-weight: 700; color: var(--deep-blue); font-size: 0.9rem; margin-bottom: 5px; }
+        .comp-desc { color: #888; font-size: 0.8rem; }
+
+        /* --- 7. Table Section --- */
+        .table-section { margin-bottom: 80px; }
+        .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; border: 1px solid #eee; }
+        .vs-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .vs-table th, .vs-table td { padding: 18px; text-align: left; border-bottom: 1px solid #eee; }
+        .vs-table th { background: var(--light-bg); color: var(--deep-blue); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+        .col-us { background: #f0f8ff; border-left: 3px solid var(--tech-blue); font-weight: 600; color: var(--deep-blue); }
+        .col-others { color: #999; }
+
+        /* --- 8. Model Selection (Visual Grid) --- */
+        .feature-section { margin-bottom: 80px; }
+        .model-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        
+        .model-card { 
+            border: 1px solid #eee; border-radius: 12px; overflow: hidden; transition: 0.3s; 
+            display: flex; flex-direction: column; background: white;
+        }
+        .model-card:hover { border-color: var(--tech-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-5px); }
+        
+        .model-img { 
+            height: 250px; background: #f9f9f9; 
+            display: flex; align-items: center; justify-content: center; 
+        }
+        /* 机器图防变形 */
+        .model-img img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+        
+        .model-body { padding: 30px; flex: 1; }
+        .model-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; color: var(--deep-blue); }
+        .model-features { list-style: none; padding: 0; margin: 0; }
+        .model-features li { margin-bottom: 10px; color: #666; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+        .model-features i { color: var(--tech-blue); font-size: 1rem; }
+
+        /* --- 9. After-sales --- */
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px; }
+        .service-card { background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: left; border-left: 4px solid var(--tech-blue); transition: 0.3s; }
+        .service-card:hover { background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .service-card h4 { margin: 0 0 10px 0; color: var(--deep-blue); font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .service-card p { margin: 0; color: #666; font-size: 0.9rem; }
+
+        /* --- 10. Specs Table --- */
+        .specs-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .specs-table th, .specs-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        .specs-table th { background: var(--light-bg); width: 35%; font-weight: 700; color: var(--deep-blue); }
+
+        /* --- 11. FAQ --- */
+        .faq-section { margin-bottom: 80px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .faq-item { background: #f9f9f9; padding: 30px; border-radius: 8px; border-left: 4px solid var(--border); transition:0.3s; }
+        .faq-item:hover { border-left-color: var(--tech-blue); background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .faq-q { font-weight: 700; margin-bottom: 12px; color: var(--deep-blue); display: flex; gap: 10px; }
+        .faq-a { color: #666; font-size: 0.95rem; line-height: 1.6; margin-left: 20px; }
+
+        /* --- 12. Inquiry --- */
+        #inquiry { max-width: 800px; margin: 0 auto; padding: 50px; border: 1px solid #eee; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); background: white; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-input:focus { border-color: var(--tech-blue); box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.1); }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .page-wrapper { padding: 30px 5%; }
+            .product-hero { grid-template-columns: 1fr; gap: 30px; }
+            
+            /* Trust Bar Mobile: 2列 */
+            .trust-title::before, .trust-title::after { display: none; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .trust-logo { height: 50px; }
+
+            .action-btns { flex-direction: column; }
+            
+            /* Components Mobile: 2 Col */
+            .comp-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            
+            .model-grid { grid-template-columns: 1fr; }
+            .service-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            #inquiry { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-cube"></i> CAIHE<span>TECH</span></a>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+    </header>
+
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="product-hero">
+            <!-- Gallery -->
+            <div>
+                <div class="gallery-main">
+                    <!-- 请准备 images/product-labeling-machine.webp -->
+                    <img src="images/product-labeling-machine.webp" id="mainImage" alt="Automatic Labeling Machine">
+                </div>
+                <div class="gallery-thumbs">
+                    <!-- 预留细节图 -->
+                    <img src="images/labeling-round.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Round'">
+                    <img src="images/labeling-flat.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Flat'">
+                    <img src="images/labeling-plc.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=PLC'">
+                    <img src="images/labeling-sensor.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Sensor'">
+                    <img src="images/labeling-speed.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Speed'">
+                </div>
+            </div>
+
+            <div class="info-col">
+                <span class="category-tag">Automation Machinery</span>
+                <h1>Automatic Labeling Machines</h1>
+                <p style="color:#666; font-size:1.05rem; margin-bottom: 20px;">
+                    Increase your production speed by 500%. Precision label applicators for bottles, jars, and bags. <strong>Powered by Panasonic & Sick.</strong>
+                </p>
+
+                <div class="highlights">
+                    <div class="highlight-item"><i class="fas fa-tachometer-alt"></i> 50 pcs/min Speed</div>
+                    <div class="highlight-item"><i class="fas fa-ruler-combined"></i> ±1mm Precision</div>
+                    <div class="highlight-item"><i class="fas fa-tools"></i> Easy Setup (10 mins)</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> CE Certified</div>
+                </div>
+
+                <div class="promo-box">
+                    <h3><i class="fas fa-hand-holding-usd"></i> Why Buy From Us?</h3>
+                    <p style="margin:5px 0 0; color:#555; font-size:0.9rem;">
+                        We are a <strong>Label Factory</strong>. We test every machine with REAL labels before shipping to ensure 100% compatibility.
+                    </p>
+                </div>
+
+                <div class="action-btns">
+                    <a href="#inquiry" class="btn-primary">Get Machine Price</a>
+                    <a href="https://wa.me/8619120719547" class="btn-secondary"><i class="fab fa-whatsapp"></i> Video Call Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Bar (Visualized) -->
+        <div class="trust-bar">
+            <div class="trust-title">CERTIFIED QUALITY YOU CAN TRUST</div>
+            <div class="trust-grid">
+                <!-- 实装证书 -->
+                <img src="images/cert-iso-9001.webp" alt="ISO 9001" class="trust-logo">
+                <img src="images/cert-fsc.webp" alt="FSC" class="trust-logo">
+                <img src="images/cert-ul.webp" alt="UL" class="trust-logo">
+                <img src="images/cert-ce.webp" alt="CE" class="trust-logo">
+            </div>
+        </div>
+
+        <!-- 2. Components (Logo Wall - 实装) -->
+        <div class="component-section">
+            <h2 class="section-title">World-Class Components</h2>
+            <p class="section-subtitle">We use top-tier brands to ensure machine stability.</p>
+            
+            <div class="comp-grid">
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <!-- 请准备 images/logo-panasonic.webp -->
+                        <img src="images/logo-panasonic.webp" alt="Panasonic" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=Panasonic'">
+                    </div>
+                    <div class="comp-title">PLC & Motors</div>
+                    <p class="comp-desc">Japan (High Precision)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <!-- 请准备 images/logo-sick.webp -->
+                        <img src="images/logo-sick.webp" alt="SICK" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=SICK'">
+                    </div>
+                    <div class="comp-title">Label Sensor</div>
+                    <p class="comp-desc">Germany (Accurate)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <!-- 请准备 images/logo-schneider.webp -->
+                        <img src="images/logo-schneider.webp" alt="Schneider" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=Schneider'">
+                    </div>
+                    <div class="comp-title">Switches</div>
+                    <p class="comp-desc">France (Durable)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo-wrapper">
+                        <!-- 请准备 images/logo-delta.webp -->
+                        <img src="images/logo-delta.webp" alt="Delta" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=Delta'">
+                    </div>
+                    <div class="comp-title">Inverter</div>
+                    <p class="comp-desc">Taiwan (Stable)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. ROI Comparison Table -->
+        <div class="table-section">
+            <h2 class="section-title">Manual vs. Automatic</h2>
+            <div class="table-wrapper">
+                <table class="vs-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">Comparison</th>
+                            <th style="width: 30%;">Hand Labeling</th>
+                            <th style="width: 30%; color: var(--tech-blue);">Our Machine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Speed (Efficiency)</strong><br><span style="font-size:0.8rem; font-weight:400;">Pieces per minute</span></td>
+                            <td class="col-others">5 - 8 ppm</td>
+                            <td class="col-us">20 - 50 ppm (5x Faster)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accuracy</strong><br><span style="font-size:0.8rem; font-weight:400;">Label position</span></td>
+                            <td class="col-others">Uneven, Bubbles</td>
+                            <td class="col-us">±1.0mm Precision</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Labor Cost</strong><br><span style="font-size:0.8rem; font-weight:400;">Workers needed</span></td>
+                            <td class="col-others">2 - 3 Workers</td>
+                            <td class="col-us">1 Operator</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. Model Selection (Visual Cards) -->
+        <div class="feature-section">
+            <h2 class="section-title">Choose Your Model</h2>
+            <p class="section-subtitle">Based on your bottle/product shape.</p>
+            
+            <div class="model-grid">
+                <!-- Round Bottle -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <!-- 请准备 images/model-round.webp -->
+                        <img src="images/model-round.webp" alt="Round Bottle Labeler" onerror="this.src='https://placehold.co/400x300/dff9fb/0984e3?text=Round+Bottle+Machine'">
+                    </div>
+                    <div class="model-body">
+                        <div class="model-title">Round Bottle Labeler (MT-50)</div>
+                        <ul class="model-features">
+                            <li><i class="fas fa-check"></i> For: Jars, Wine Bottles, Cans</li>
+                            <li><i class="fas fa-check"></i> Type: Semi-automatic Tabletop</li>
+                            <li><i class="fas fa-check"></i> Speed: 20-40 pcs/min</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Flat Surface -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <!-- 请准备 images/model-flat.webp -->
+                        <img src="images/model-flat.webp" alt="Flat Surface Labeler" onerror="this.src='https://placehold.co/400x300/dff9fb/0984e3?text=Flat+Surface+Machine'">
+                    </div>
+                    <div class="model-body">
+                        <div class="model-title">Flat Surface Labeler (LT-60)</div>
+                        <ul class="model-features">
+                            <li><i class="fas fa-check"></i> For: Boxes, Bags, Square Bottles</li>
+                            <li><i class="fas fa-check"></i> Type: Semi-automatic Tabletop</li>
+                            <li><i class="fas fa-check"></i> Speed: 20-40 pcs/min</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. After-sales -->
+        <div class="feature-section">
+            <h2 class="section-title">Worry-Free After Sales</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h4><i class="fas fa-video"></i> Remote Setup Guide</h4>
+                    <p>1-on-1 video call support to help you calibrate the sensor in 30 mins.</p>
+                </div>
+                <div class="service-card">
+                    <h4><i class="fas fa-tools"></i> Lifetime Maintenance</h4>
+                    <p>Free technical consultation. We stock all spare parts and ship via DHL.</p>
+                </div>
+                <div class="service-card">
+                    <h4><i class="fas fa-check-circle"></i> Label Testing</h4>
+                    <p>Send us your label roll, and we will test run it before shipping.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Specs Table -->
+        <div style="max-width:900px; margin:0 auto 80px;">
+            <h2 class="section-title" style="margin-bottom:20px;">Technical Specifications</h2>
+            <table class="specs-table">
+                <tr><th>Power Supply</th><td>110V / 220V, 50/60Hz</td></tr>
+                <tr><th>Label Width</th><td>15mm - 150mm</td></tr>
+                <tr><th>Label Length</th><td>15mm - 300mm</td></tr>
+                <tr><th>Bottle Diameter</th><td>20mm - 120mm (Round Model)</td></tr>
+                <tr><th>Label Roll ID</th><td>76mm (Standard Core)</td></tr>
+                <tr><th>Label Roll OD</th><td>Max 250mm</td></tr>
+                <tr><th>Machine Weight</th><td>25 KG (Tabletop Model)</td></tr>
+            </table>
+        </div>
+
+        <!-- 7. FAQ -->
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> Is it hard to set up?</div>
+                    <div class="faq-a">Not at all. It comes 90% pre-assembled. You just need to install the label roll and adjust the guide rails.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> Does it fit my labels?</div>
+                    <div class="faq-a">It fits any standard roll labels with a <strong>76mm (3") core</strong>. If you print labels with us, we guarantee they will fit perfectly.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> What if the machine breaks?</div>
+                    <div class="faq-a">The machine is very durable. We offer a <strong>1-year warranty</strong> on motors and boards.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> Do you have 110V version?</div>
+                    <div class="faq-a">Yes, we customize the voltage (110V US plug or 220V EU/UK plug) according to your country standard.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Inquiry -->
+        <div id="inquiry">
+            <h2 class="section-title" style="margin-bottom:10px;">Get Machine Quote</h2>
+            <p style="text-align:center; color:#666; margin-bottom:30px;">Tell us your bottle size for a recommendation.</p>
+            
+            <form action="https://formspree.io/f/mnneryyq" method="POST">
+                <input type="hidden" name="source" value="Labeling Machine Page">
+                
+                <div class="form-row">
+                    <input type="email" name="email" class="form-input" placeholder="Business Email *" required>
+                    <input type="text" name="name" class="form-input" placeholder="Your Name">
+                </div>
+                
+                <textarea name="message" class="form-input" placeholder="E.g., I have round glass bottles, diameter 60mm. Need 1 machine..." style="height:120px; margin-bottom:20px;"></textarea>
+                
+                <button type="submit" class="btn-primary" style="width:100%;">Send Inquiry Now</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer style="text-align:center; padding:40px; color:#999; font-size:0.9rem; margin-top:50px;">
+        &copy; 2025 Caihe Tech. <a href="index.html" style="color:var(--tech-blue);">Back to Home</a>
+    </footer>
+
+</body>
+</html>

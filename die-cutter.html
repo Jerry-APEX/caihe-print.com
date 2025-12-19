@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Digital Roll Label Die-Cutting Machine | No Dies Required | Caihe Tech</title>
+    <meta name="description" content="Intelligent digital label finisher for roll materials. No dies required. Roll-to-roll cutting, slitting, and lamination in one pass. Ideal for short-run custom labels.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles --- */
+        :root { 
+            --primary-green: #00b894; 
+            --deep-blue: #2d3436; 
+            --light-bg: #f5f6fa; 
+            --border: #e1e1e1;
+            --white: #ffffff;
+            --tech-blue: #0984e3; /* 机械专用蓝色 */
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--deep-blue); line-height: 1.6; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- 2. Header --- */
+        header { 
+            padding: 15px 5%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; 
+            align-items: center; position: sticky; top:0; background: rgba(255,255,255,0.98); z-index: 999;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary-green); }
+        .back-link { font-weight: 600; font-size: 0.9rem; color: #666; display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 4px; }
+        .back-link:hover { background: var(--light-bg); color: var(--primary-green); }
+
+        /* --- 3. Layout --- */
+        .page-wrapper { max-width: 1280px; margin: 0 auto; padding: 40px 5%; }
+
+        /* --- 4. Hero Section --- */
+        .product-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        
+        .gallery-main { 
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--border); 
+            aspect-ratio: 4/3; background: #f9f9f9; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; 
+        }
+        /* 防变形 */
+        .gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+        
+        .gallery-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        .thumb { border-radius: 4px; border: 1px solid var(--border); cursor: pointer; opacity: 0.7; aspect-ratio: 1/1; object-fit: cover; transition: 0.2s; }
+        .thumb:hover { opacity: 1; border-color: var(--tech-blue); }
+
+        .info-col h1 { font-size: 2.5rem; margin: 0 0 15px; line-height: 1.1; }
+        .category-tag { background: #e3f2fd; color: #0984e3; padding: 6px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
+        
+        .highlights { margin: 25px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .highlight-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; }
+        .highlight-item i { color: var(--tech-blue); }
+
+        .tech-box { border: 2px dashed var(--tech-blue); padding: 20px; border-radius: 8px; margin: 30px 0; background: #f0f8ff; }
+        .tech-box h3 { margin: 0; font-size: 1.1rem; color: var(--tech-blue); display: flex; align-items: center; gap: 10px; }
+
+        .action-btns { display: flex; gap: 15px; margin-top: 30px; }
+        .btn-primary { 
+            flex: 2; background: var(--tech-blue); color: white; border: none; padding: 15px; 
+            border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; text-align: center; 
+            box-shadow: 0 4px 12px rgba(9, 132, 227, 0.25); text-decoration: none;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .btn-secondary { 
+            flex: 1; background: white; color: var(--deep-blue); border: 2px solid var(--deep-blue); 
+            padding: 15px; border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; 
+            text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
+        }
+        .btn-primary:hover { background: #0069d9; transform: translateY(-2px); }
+
+        /* --- 5. Trust Bar (实装版) --- */
+        .trust-bar { margin-bottom: 60px; padding: 30px 0; background: transparent; border-bottom: 1px solid #eee; border-top: 1px solid #eee; text-align: center; }
+        .trust-title { font-size: 0.85rem; color: #999; margin-bottom: 25px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+        .trust-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; align-items: center; }
+        .trust-logo { height: 55px; width: auto; object-fit: contain; filter: none; opacity: 1; transition: 0.3s; }
+        .trust-logo:hover { transform: scale(1.1); }
+
+        /* --- 6. Table Section (Digital vs Traditional) --- */
+        .table-section { margin-bottom: 80px; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: #666; max-width: 700px; margin: 0 auto 40px; display: block; }
+        .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; border: 1px solid #eee; }
+        .vs-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .vs-table th, .vs-table td { padding: 18px; text-align: left; border-bottom: 1px solid #eee; }
+        .vs-table th { background: var(--light-bg); color: var(--deep-blue); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+        .col-us { background: #f0f8ff; border-left: 3px solid var(--tech-blue); font-weight: 600; color: var(--deep-blue); }
+        .col-others { color: #999; }
+
+        /* --- 7. Workflow Visual Grid (New!) --- */
+        .grid-section { margin-bottom: 80px; }
+        
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); /* PC 4列 */
+            gap: 25px; 
+        }
+        
+        .grid-card { 
+            background: white; border: 1px solid #eee; padding: 0; 
+            border-radius: 12px; overflow: hidden; transition: 0.3s; 
+            display: flex; flex-direction: column; text-align: center;
+        }
+        .grid-card:hover { border-color: var(--tech-blue); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        
+        .card-img-wrapper {
+            height: 180px; background: #f9f9f9; width: 100%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        /* 机器部件特写用 contain，防止被切掉 */
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: contain; padding: 10px; } 
+        
+        .card-info { padding: 25px; text-align: left; }
+        .card-info h3 { margin: 0 0 8px 0; color: var(--deep-blue); font-size: 1.1rem; font-weight: 700; }
+        .card-info p { margin: 0; color: #666; font-size: 0.9rem; line-height: 1.5; }
+
+        /* --- 8. Components (Logo Wall) --- */
+        .comp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .comp-card { 
+            border: 1px solid #eee; padding: 25px; border-radius: 8px; text-align: center; 
+            background: #fff; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .comp-card:hover { border-color: var(--tech-blue); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .comp-logo { height: 50px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+        .comp-logo img { max-height: 100%; max-width: 90%; object-fit: contain; }
+        .comp-title { font-weight: 700; color: var(--deep-blue); font-size: 0.9rem; margin-bottom: 5px; }
+        .comp-desc { color: #888; font-size: 0.8rem; }
+
+        /* --- 9. FAQ & Inquiry --- */
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .faq-item { background: #f9f9f9; padding: 30px; border-radius: 8px; border-left: 4px solid var(--border); transition:0.3s; }
+        .faq-item:hover { border-left-color: var(--tech-blue); background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .faq-q { font-weight: 700; margin-bottom: 12px; color: var(--deep-blue); display: flex; gap: 10px; }
+        .faq-a { color: #666; font-size: 0.95rem; line-height: 1.6; margin-left: 20px; }
+
+        #inquiry { max-width: 800px; margin: 0 auto; padding: 50px; border: 1px solid #eee; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); background: white; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-input:focus { border-color: var(--tech-blue); box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.1); }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .page-wrapper { padding: 30px 5%; }
+            .product-hero { grid-template-columns: 1fr; gap: 30px; }
+            
+            /* Trust Bar Mobile */
+            .trust-title::before, .trust-title::after { display: none; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .trust-logo { height: 50px; }
+
+            .action-btns { flex-direction: column; }
+            
+            /* Grid Mobile: 2 Col */
+            .grid-container { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .comp-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .faq-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            #inquiry { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-cube"></i> CAIHE<span>TECH</span></a>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+    </header>
+
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="product-hero">
+            <!-- Gallery -->
+            <div>
+                <div class="gallery-main">
+                    <!-- 请确保 images/product-die-cutter.webp 存在 -->
+                    <img src="images/product-die-cutter.webp" id="mainImage" alt="Digital Die Cutter">
+                </div>
+                <div class="gallery-thumbs">
+                    <!-- 预留细节图 -->
+                    <img src="images/die-cutter-blade.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Blade'">
+                    <img src="images/die-cutter-roll.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Roll'">
+                    <img src="images/die-cutter-slit.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Slit'">
+                    <img src="images/die-cutter-ui.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=UI'">
+                    <img src="images/die-cutter-work.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/dff9fb/0984e3?text=Work'">
+                </div>
+            </div>
+
+            <div class="info-col">
+                <span class="category-tag">Machinery / Digital Finishing</span>
+                <h1>Digital Roll Label Die-Cutter</h1>
+                <p style="color:#666; font-size:1.05rem; margin-bottom: 20px;">
+                    <strong>No Dies Required.</strong> The smart solution for short-run labels. Built with top-tier global components for stability and precision.
+                </p>
+
+                <div class="highlights">
+                    <div class="highlight-item"><i class="fas fa-laptop-code"></i> Software Controlled</div>
+                    <div class="highlight-item"><i class="fas fa-cut"></i> 4-Head Blade System</div>
+                    <div class="highlight-item"><i class="fas fa-shield-alt"></i> CE Certified</div>
+                    <div class="highlight-item"><i class="fas fa-columns"></i> Inline Slitting</div>
+                </div>
+
+                <div class="tech-box">
+                    <h3><i class="fas fa-piggy-bank"></i> Zero Tooling Cost</h3>
+                    <p style="margin:5px 0 0; color:#555; font-size:0.9rem;">
+                        Save $200+ per job by eliminating magnetic dies. Import AI/PDF file and start cutting immediately.
+                    </p>
+                </div>
+
+                <div class="action-btns">
+                    <a href="#inquiry" class="btn-primary">Get Machine Price</a>
+                    <a href="https://wa.me/8619120719547" class="btn-secondary"><i class="fab fa-whatsapp"></i> Video Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Bar (Visualized) -->
+        <div class="trust-bar">
+            <div class="trust-title">CERTIFIED QUALITY YOU CAN TRUST</div>
+            <div class="trust-grid">
+                <!-- 实装证书 -->
+                <img src="images/cert-iso-9001.webp" alt="ISO 9001" class="trust-logo">
+                <img src="images/cert-fsc.webp" alt="FSC" class="trust-logo">
+                <img src="images/cert-ul.webp" alt="UL" class="trust-logo">
+                <img src="images/cert-ce.webp" alt="CE" class="trust-logo">
+            </div>
+        </div>
+
+        <!-- 2. Comparison Table -->
+        <div class="table-section">
+            <h2 class="section-title">Digital vs Traditional</h2>
+            <p class="section-subtitle">Why smart factories are switching to digital finishing.</p>
+            <div class="table-wrapper">
+                <table class="vs-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">Comparison</th>
+                            <th style="width: 30%;">Traditional Rotary Die</th>
+                            <th style="width: 30%; color: var(--tech-blue);">Digital Knife Cutting</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tooling Cost (Die)</strong><br><span style="font-size:0.8rem; font-weight:400;">Cost to start a new shape</span></td>
+                            <td class="col-others">$150 - $300 / Shape</td>
+                            <td class="col-us">$0 (File Based)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setup Time</strong><br><span style="font-size:0.8rem; font-weight:400;">Time to change jobs</span></td>
+                            <td class="col-others">20 - 40 Minutes</td>
+                            <td class="col-us">1 Minute (Load File)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Flexibility</strong><br><span style="font-size:0.8rem; font-weight:400;">Handling complex shapes</span></td>
+                            <td class="col-others">Limited</td>
+                            <td class="col-us">Unlimited</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. All-in-One Workflow (Visual Grid) -->
+        <div class="grid-section">
+            <h2 class="section-title">All-in-One Workflow</h2>
+            <p class="section-subtitle">Cut, Slit, and Finish in one pass.</p>
+            
+            <div class="grid-container">
+                <!-- Lamination -->
+                <div class="grid-card">
+                    <div class="card-img-wrapper">
+                        <!-- 请准备 images/workflow-lamination.webp -->
+                        <img src="images/die-cutter-lamination.webp" onerror="this.src='https://placehold.co/300x200/dff9fb/0984e3?text=Lamination'">
+                    </div>
+                    <div class="card-info">
+                        <h3>1. Lamination</h3>
+                        <p>Cold lamination inline. Protect your labels with Gloss or Matte film.</p>
+                    </div>
+                </div>
+
+                <!-- Digital Cutting -->
+                <div class="grid-card">
+                    <div class="card-img-wrapper">
+                        <!-- 请准备 images/workflow-cutting.webp -->
+                        <img src="images/die-cutter-digital-cutting.webp" onerror="this.src='https://placehold.co/300x200/dff9fb/0984e3?text=Cutting'">
+                    </div>
+                    <div class="card-info">
+                        <h3>2. Digital Cutting</h3>
+                        <p>4-Head blade system. Supports kiss-cut and full-cut modes.</p>
+                    </div>
+                </div>
+
+                <!-- Waste Removal -->
+                <div class="grid-card">
+                    <div class="card-img-wrapper">
+                        <!-- 请准备 images/workflow-waste.webp -->
+                        <img src="images/die-cutter-waste-removal.webp" onerror="this.src='https://placehold.co/300x200/dff9fb/0984e3?text=Waste'">
+                    </div>
+                    <div class="card-info">
+                        <h3>3. Waste Removal</h3>
+                        <p>Automatic matrix stripping. Removes waste paper smoothly.</p>
+                    </div>
+                </div>
+
+                <!-- Slitting -->
+                <div class="grid-card">
+                    <div class="card-img-wrapper">
+                        <!-- 请准备 images/workflow-slitting.webp -->
+                        <img src="images/die-cutter-slitting.webp" onerror="this.src='https://placehold.co/300x200/dff9fb/0984e3?text=Slitting'">
+                    </div>
+                    <div class="card-info">
+                        <h3>4. Inline Slitting</h3>
+                        <p>Integrated slitting blades to separate large rolls into small rolls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Premium Components (Logo Wall) -->
+        <div class="component-section">
+            <h2 class="section-title">World-Class Components</h2>
+            <div class="comp-grid">
+                <div class="comp-card">
+                    <div class="comp-logo">
+                        <img src="images/logo-panasonic.webp" alt="Panasonic" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=Panasonic'">
+                    </div>
+                    <div class="comp-title">Servo Motor</div>
+                    <p class="comp-desc">Japan (High Precision)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo">
+                        <img src="images/logo-schneider.webp" alt="Schneider" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=Schneider'">
+                    </div>
+                    <div class="comp-title">Electrical Parts</div>
+                    <p class="comp-desc">France (Stable Power)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo">
+                        <img src="images/logo-sick.webp" alt="SICK" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=SICK'">
+                    </div>
+                    <div class="comp-title">Label Sensor</div>
+                    <p class="comp-desc">Germany (Accurate)</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-logo">
+                        <img src="images/logo-hiwin.webp" alt="HIWIN" onerror="this.src='https://placehold.co/200x80/fff/ccc?text=HIWIN'">
+                    </div>
+                    <div class="comp-title">Guide Rail</div>
+                    <p class="comp-desc">Taiwan (Smooth)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Specs -->
+        <div style="max-width:900px; margin:0 auto 80px;">
+            <h2 class="section-title" style="margin-bottom:20px;">Technical Specifications</h2>
+            <table class="specs-table">
+                <tr><th>Max Web Width</th><td>350mm</td></tr>
+                <tr><th>Max Cutting Speed</th><td>12m/min (Dependent on shape complexity)</td></tr>
+                <tr><th>Cutting Heads</th><td>4 Heads Standard</td></tr>
+                <tr><th>Cutting Precision</th><td>±0.1mm</td></tr>
+                <tr><th>Max Label Diameter</th><td>450mm</td></tr>
+                <tr><th>Functions</th><td>Laminating, Die-cutting, Waste Removing, Slitting</td></tr>
+                <tr><th>Machine Size</th><td>1900 x 1000 x 1400 mm</td></tr>
+                <tr><th>Power</th><td>220V / 2KW (Single Phase)</td></tr>
+            </table>
+        </div>
+
+        <!-- 6. FAQ -->
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> Do I need to buy dies?</div>
+                    <div class="faq-a">No! This is a <strong>digital blade cutter</strong>. It cuts directly from your AI/PDF vector line. You save money on every new design.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> What materials can it cut?</div>
+                    <div class="faq-a">It handles almost all label materials including PP, PET, PVC, Art Paper, and Kraft Paper. Max thickness around 0.3mm.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> Is it hard to operate?</div>
+                    <div class="faq-a">Very easy. If you can use a printer, you can use this machine. We provide training videos and remote support. Setup takes < 5 mins.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--tech-blue);"></i> How fast is it?</div>
+                    <div class="faq-a">For simple shapes (squares/circles), it can reach 10-12 meters/min. For complex shapes, it slows down slightly to maintain precision.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Inquiry -->
+        <div id="inquiry">
+            <h2 class="section-title" style="margin-bottom:10px;">Get Machine Price List</h2>
+            <p style="text-align:center; color:#666; margin-bottom:30px;">We offer EXW/FOB factory direct pricing.</p>
+            
+            <form action="https://formspree.io/f/mnneryyq" method="POST">
+                <input type="hidden" name="source" value="Die Cutter Page">
+                
+                <div class="form-row">
+                    <input type="email" name="email" class="form-input" placeholder="Business Email *" required>
+                    <input type="text" name="name" class="form-input" placeholder="Your Name">
+                </div>
+                
+                <textarea name="message" class="form-input" placeholder="I am interested in the Digital Die Cutter. Do you ship to..." style="height:120px; margin-bottom:20px;"></textarea>
+                
+                <button type="submit" class="btn-primary" style="width:100%;">Send Inquiry Now</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer style="text-align:center; padding:40px; color:#999; font-size:0.9rem; margin-top:50px;">
+        &copy; 2025 Caihe Tech. <a href="index.html" style="color:var(--tech-blue);">Back to Home</a>
+    </footer>
+
+</body>
+</html>

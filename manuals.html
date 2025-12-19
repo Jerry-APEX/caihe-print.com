@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Custom Instruction Manuals & Brochures | Precision Folding | Caihe Tech</title>
+    <meta name="description" content="High-quality instruction manuals and user guides. Precision folding (no cracking), FSC certified paper, and vibrant soy ink printing. Factory direct from Dongguan.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. Global Styles --- */
+        :root { 
+            --primary-green: #00b894; 
+            --deep-blue: #2d3436; 
+            --light-bg: #f5f6fa; 
+            --border: #e1e1e1;
+            --white: #ffffff;
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--deep-blue); line-height: 1.6; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- 2. Header --- */
+        header { 
+            padding: 15px 5%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; 
+            align-items: center; position: sticky; top: 0; background: rgba(255,255,255,0.98); 
+            z-index: 999; backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--primary-green); }
+        .back-link { font-weight: 600; font-size: 0.9rem; color: #666; display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 4px; }
+        .back-link:hover { background: var(--light-bg); color: var(--primary-green); }
+
+        /* --- 3. Layout --- */
+        .page-wrapper { max-width: 1280px; margin: 0 auto; padding: 40px 5%; }
+
+        /* --- 4. Hero Section --- */
+        .product-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        
+        .gallery-main { 
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--border); 
+            aspect-ratio: 4/3; background: #f9f9f9; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; 
+        }
+        /* 防变形 */
+        .gallery-main img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+        
+        .gallery-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        .thumb { border-radius: 4px; border: 1px solid var(--border); cursor: pointer; opacity: 0.7; aspect-ratio: 1/1; object-fit: cover; transition: 0.2s; }
+        .thumb:hover { opacity: 1; border-color: var(--primary-green); }
+
+        .info-col h1 { font-size: 2.5rem; margin: 0 0 15px; line-height: 1.1; }
+        .category-tag { background: var(--light-bg); padding: 5px 10px; font-size: 0.8rem; font-weight: bold; color: #666; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
+        
+        .highlights { margin: 25px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .highlight-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; }
+        .highlight-item i { color: var(--primary-green); }
+
+        .quality-box { border: 2px dashed #00b894; padding: 20px; border-radius: 8px; margin: 30px 0; background: #f0fdf4; }
+        .quality-box h3 { margin: 0; font-size: 1.1rem; color: #00b894; display: flex; align-items: center; gap: 10px; }
+
+        .action-btns { display: flex; gap: 15px; margin-top: 30px; }
+        .btn-primary { 
+            flex: 2; background: var(--primary-green); color: white; border: none; padding: 15px; 
+            border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; text-align: center; 
+            box-shadow: 0 4px 12px rgba(0, 184, 148, 0.25); text-decoration: none;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .btn-secondary { 
+            flex: 1; background: white; color: var(--deep-blue); border: 2px solid var(--deep-blue); 
+            padding: 15px; border-radius: 6px; font-weight: 700; font-size: 1.1rem; cursor: pointer; 
+            text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
+        }
+        .btn-primary:hover { background: #009e7e; transform: translateY(-2px); }
+
+        /* --- 5. Trust Bar (实装版) --- */
+        .trust-bar { 
+            margin-bottom: 60px; padding: 30px 0; background: transparent; 
+            border-bottom: 1px solid #eee; border-top: 1px solid #eee; text-align: center; 
+        }
+        .trust-title { 
+            font-size: 0.85rem; color: #999; margin-bottom: 25px; 
+            font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+        }
+        .trust-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; align-items: center; }
+        .trust-logo { height: 55px; width: auto; object-fit: contain; filter: none; opacity: 1; transition: 0.3s; }
+        .trust-logo:hover { transform: scale(1.1); }
+
+        /* --- 6. Table Section --- */
+        .table-section { margin-bottom: 80px; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: #666; max-width: 700px; margin: 0 auto 40px; display: block; }
+        .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; border: 1px solid #eee; }
+        .vs-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .vs-table th, .vs-table td { padding: 18px; text-align: left; border-bottom: 1px solid #eee; }
+        .vs-table th { background: var(--light-bg); color: var(--deep-blue); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+        .col-us { background: #f0fdf4; border-left: 3px solid var(--primary-green); font-weight: 600; color: var(--deep-blue); }
+        .col-others { color: #999; }
+
+        /* --- 7. GSM Guide (Visual Grid) --- */
+        .gsm-section { margin-bottom: 80px; }
+        .gsm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .gsm-card { 
+            border: 1px solid #eee; padding: 30px 20px; border-radius: 12px; transition: 0.3s; 
+            background: white; text-align: center; display: flex; flex-direction: column; align-items: center;
+        }
+        .gsm-card:hover { border-color: var(--primary-green); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .gsm-icon { font-size: 2.5rem; color: var(--deep-blue); margin-bottom: 15px; }
+        .gsm-badge { background: var(--deep-blue); color: white; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
+        .gsm-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--deep-blue); }
+        .gsm-desc { font-size: 0.9rem; color: #666; margin-bottom: 15px; line-height: 1.5; }
+        .gsm-use { font-size: 0.85rem; color: var(--primary-green); font-weight: 600; background: #e6fffa; padding: 8px; border-radius: 4px; }
+
+        /* --- 8. Format Selection (Hybrid Style: Icon Tabs + Visual Cards) --- */
+        .tabs-container { margin-bottom: 80px; }
+        
+        /* 导航栏：动画图标 */
+        .tabs-header { 
+            display: flex; justify-content: center; gap: 25px; margin-bottom: 40px; flex-wrap: wrap;
+        }
+        .tab-btn { 
+            display: flex; align-items: center; gap: 12px; padding: 15px 35px;
+            background: white; border: 1px solid #eee; border-radius: 50px;
+            cursor: pointer; opacity: 0.7; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 700; color: #666; font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .tab-btn i { font-size: 1.3rem; transition: 0.3s; }
+        
+        .tab-btn:hover { border-color: var(--primary-green); color: var(--primary-green); transform: translateY(-3px); }
+        .tab-btn:hover i { transform: rotate(15deg) scale(1.2); }
+
+        .tab-btn.active { opacity: 1; border-color: var(--primary-green); background: var(--primary-green); color: white; box-shadow: 0 10px 20px rgba(0, 184, 148, 0.25); }
+        .tab-btn.active:hover { color: white; }
+
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+        
+        .material-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        
+        /* 沉浸式卡片 */
+        .material-card { 
+            background: white; border: 1px solid transparent; padding: 15px; 
+            border-radius: 20px; /* 大圆角 */
+            text-align: center; transition: 0.3s; 
+            display: flex; flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .material-card:hover { 
+            border-color: var(--primary-green); transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
+        }
+        
+        /* 图片区域 */
+        .mat-img-wrapper {
+            height: 220px; background: #f4f6f8; width: 100%;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 16px; overflow: hidden; margin-bottom: 0;
+            position: relative;
+        }
+        .mat-img { 
+            width: 100%; height: 100%; object-fit: cover; /* 撑满 */
+            transition: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .material-card:hover .mat-img { transform: scale(1.08); } 
+        
+        .mat-info { padding: 20px 10px; text-align: left; }
+        .mat-info h3 { margin: 0 0 8px 0; color: var(--deep-blue); font-size: 1.3rem; font-weight: 700; }
+        .mat-info p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.5; }
+
+        /* --- 9. Finishes (Visual Cards - Immersive Style) --- */
+        .finish-section { margin-bottom: 80px; }
+        .finish-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        
+        /* 复用 material-card 样式，保持一致 */
+        .finish-item { 
+            background: white; border: 1px solid transparent; padding: 10px;
+            border-radius: 16px; text-align: center; transition: 0.3s; 
+            display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .finish-item:hover { border-color: var(--primary-green); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        
+        .finish-img { 
+            height: 150px; /* 高度 */
+            background: #f4f6f8; margin-bottom: 10px; 
+            display: flex; align-items: center; justify-content: center; 
+            border-radius: 12px; overflow: hidden; 
+            width: 100%;
+        }
+        /* 图片撑满 */
+        .finish-img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .finish-text { padding: 10px; }
+        .finish-text strong { display: block; font-size: 1.1rem; color: var(--deep-blue); margin-bottom: 5px; }
+        .finish-text p { font-size: 0.85rem; color: #888; margin: 0; }
+
+
+        /* --- 10. FAQ & Inquiry --- */
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .faq-item { background: #f9f9f9; padding: 30px; border-radius: 12px; border-left: 4px solid var(--border); transition:0.3s; }
+        .faq-item:hover { border-left-color: var(--primary-green); background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .faq-q { font-weight: 700; margin-bottom: 12px; color: var(--deep-blue); display: flex; gap: 10px; }
+        .faq-a { color: #666; font-size: 0.95rem; line-height: 1.6; margin-left: 20px; }
+
+        #inquiry { max-width: 800px; margin: 0 auto; padding: 50px; border: 1px solid #eee; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); background: white; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-input:focus { border-color: var(--primary-green); box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1); }
+
+        @keyframes fadeIn { from{opacity:0; transform: translateY(10px);} to{opacity:1; transform: translateY(0);} }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .page-wrapper { padding: 30px 5%; }
+            .product-hero { grid-template-columns: 1fr; gap: 30px; }
+            
+            .trust-title::before, .trust-title::after { display: none; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .trust-logo { height: 50px; }
+
+            .action-btns { flex-direction: column; }
+            .finish-grid, .faq-grid, .gsm-grid { grid-template-columns: 1fr; }
+            
+            .tabs-header { justify-content: flex-start; gap: 10px; overflow-x: auto; padding-bottom: 10px; }
+            .tab-btn { white-space: nowrap; flex-shrink: 0; padding: 10px 20px; font-size: 0.9rem; }
+            
+            .material-grid { grid-template-columns: 1fr; } 
+            .mat-img-wrapper { height: 180px; }
+            
+            .app-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+            #inquiry { padding: 30px 20px; }
+            .form-row { grid-template-columns: 1fr; }
+            
+            /* 工艺展示在手机上显示为2列 */
+            .finish-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-cube"></i> CAIHE<span>TECH</span></a>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+    </header>
+
+    <div class="page-wrapper">
+        
+        <!-- Hero Section -->
+        <div class="product-hero">
+            <!-- Gallery -->
+            <div>
+                <div class="gallery-main">
+                    <!-- 请确保 images/product-manuals.webp 存在 -->
+                    <img src="images/product-manuals.webp" id="mainImage" alt="Custom Manuals">
+                </div>
+                <div class="gallery-thumbs">
+                    <!-- 预留细节图 -->
+                    <img src="images/manual-detail-1.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/eee/555?text=Fold'">
+                    <img src="images/manual-detail-2.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/eee/555?text=Book'">
+                    <img src="images/manual-detail-3.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/eee/555?text=Card'">
+                    <img src="images/manual-detail-4.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/eee/555?text=FSC'">
+                    <img src="images/manual-detail-5.webp" class="thumb" onclick="document.getElementById('mainImage').src=this.src" onerror="this.src='https://placehold.co/150x150/eee/555?text=Paper'">
+                </div>
+            </div>
+
+            <div class="info-col">
+                <span class="category-tag">Printing Solutions / Manuals</span>
+                <h1>Manuals & Brochures</h1>
+                <p style="color:#666; font-size:1.1rem; margin-bottom: 20px;">
+                    Professional printing for user guides, catalogs, and hang tags. We ensure <strong>sharp folding edges</strong> and <strong>consistent colors</strong> for every batch.
+                </p>
+
+                <div class="highlights">
+                    <div class="highlight-item"><i class="fas fa-leaf"></i> FSC Certified Paper</div>
+                    <div class="highlight-item"><i class="fas fa-tint"></i> Eco Soy Ink Printing</div>
+                    <div class="highlight-item"><i class="fas fa-map"></i> Automated Precision Folding</div>
+                    <div class="highlight-item"><i class="fas fa-book-open"></i> Saddle Stitch / Perfect Bound</div>
+                </div>
+
+                <div class="quality-box">
+                    <h3><i class="fas fa-gem"></i> Premium Quality Focus</h3>
+                    <p style="margin:5px 0 0; color:#555; font-size:0.9rem;">
+                        We use <strong>Crease-before-Fold</strong> technology to prevent paper cracking on dark colors. No rough edges, just clean lines.
+                    </p>
+                </div>
+
+                <div class="action-btns">
+                    <a href="#inquiry" class="btn-primary">Get Print Quote</a>
+                    <a href="https://wa.me/8619120719547" class="btn-secondary"><i class="fab fa-whatsapp"></i> Chat Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Bar -->
+        <div class="trust-bar">
+            <div class="trust-title">CERTIFIED QUALITY YOU CAN TRUST</div>
+            <div class="trust-grid">
+                <!-- 实装证书 -->
+                <img src="images/cert-iso-9001.webp" alt="ISO 9001" class="trust-logo">
+                <img src="images/cert-fsc.webp" alt="FSC" class="trust-logo">
+                <img src="images/cert-ul.webp" alt="UL" class="trust-logo">
+                <img src="images/cert-ce.webp" alt="CE" class="trust-logo">
+            </div>
+        </div>
+
+        <!-- 2. Comparison Table -->
+        <div class="table-section">
+            <h2 class="section-title">Why Print With Us?</h2>
+            <p class="section-subtitle">We solve the quality issues that affect your brand image.</p>
+            <div class="table-wrapper">
+                <table class="vs-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">Common Problems</th>
+                            <th style="width: 30%;">General Printers</th>
+                            <th style="width: 30%; color: var(--primary-green);">Caihe Tech</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Folding Cracks (爆角)</strong><br><span style="font-size:0.8rem; font-weight:400;">White lines appear at fold lines</span></td>
+                            <td class="col-others">Direct Folding</td>
+                            <td class="col-us"><i class="fas fa-check"></i> Crease before Fold</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Color Variance</strong><br><span style="font-size:0.8rem; font-weight:400;">Logo color differs from box</span></td>
+                            <td class="col-others">Visual Check</td>
+                            <td class="col-us"><i class="fas fa-check"></i> GMG Color Management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Assembly Issues</strong><br><span style="font-size:0.8rem; font-weight:400;">Folding size is not precise</span></td>
+                            <td class="col-others">Manual Folding</td>
+                            <td class="col-us"><i class="fas fa-check"></i> Auto-Folding Machine</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. GSM Paper Guide (Visual Grid) -->
+        <div class="gsm-section">
+            <h2 class="section-title">Recommended Paper (GSM)</h2>
+            <p class="section-subtitle">Choose the right thickness for your product tier.</p>
+            
+            <div class="gsm-grid">
+                <!-- Manuals -->
+                <div class="gsm-card">
+                    <div class="gsm-icon"><i class="far fa-file-alt"></i></div>
+                    <div class="gsm-badge" style="background:#7f8c8d;">For Manuals</div>
+                    <div class="gsm-title">60gsm - 100gsm</div>
+                    <p class="gsm-desc">Lightweight offset paper. Easy to fold multiple times. <br><strong>Standard: 80gsm</strong></p>
+                </div>
+                <!-- Brochures -->
+                <div class="gsm-card">
+                    <div class="gsm-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="gsm-badge" style="background:var(--primary-green);">For Brochures</div>
+                    <div class="gsm-title">Cover 250g / Inner 128g</div>
+                    <p class="gsm-desc"><strong>Cover:</strong> 200-300gsm Art Paper.<br><strong>Inner:</strong> 105gsm, 128gsm, 157gsm.</p>
+                </div>
+                <!-- Cards -->
+                <div class="gsm-card">
+                    <div class="gsm-icon"><i class="fas fa-id-card"></i></div>
+                    <div class="gsm-badge" style="background:#0984e3;">For Cards</div>
+                    <div class="gsm-title">300gsm - 400gsm</div>
+                    <p class="gsm-desc">Thick, premium cardstock. Stiff and durable feel for hang tags.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Format Selection (Hybrid Style: Icon Tabs + Visual Cards) -->
+        <div class="tabs-container">
+            <h2 class="section-title">Choose Your Format</h2>
+            
+            <!-- 导航栏：动画图标 -->
+            <div class="tabs-header">
+                <div class="tab-btn active" onclick="switchTab(event, 'folded')">
+                    <i class="fas fa-map"></i> Folded (Leaflets)
+                </div>
+                <div class="tab-btn" onclick="switchTab(event, 'booklets')">
+                    <i class="fas fa-book"></i> Booklets
+                </div>
+                <div class="tab-btn" onclick="switchTab(event, 'cards')">
+                    <i class="fas fa-id-card"></i> Cards & Tags
+                </div>
+            </div>
+
+            <!-- Tab Content (Visual Cards) -->
+            <div id="folded" class="tab-content active">
+                <div class="material-grid">
+                    <div class="material-card">
+                        <div class="mat-img-wrapper">
+                            <!-- 请准备 images/format-map-fold.webp -->
+                            <img src="images/format-map-fold.webp" class="mat-img" onerror="this.src='https://placehold.co/300x200/eee/555?text=Map+Fold'">
+                        </div>
+                        <div class="mat-info">
+                            <h3>Map Fold / Cross Fold</h3>
+                            <p>Folds down to a compact size. Ideal for fitting large info sheets into small boxes.</p>
+                        </div>
+                    </div>
+                    <div class="material-card">
+                        <div class="mat-img-wrapper">
+                            <!-- 请准备 images/format-z-fold.webp -->
+                            <img src="images/format-z-fold.webp" class="mat-img" onerror="this.src='https://placehold.co/300x200/eee/555?text=Z-Fold'">
+                        </div>
+                        <div class="mat-info">
+                            <h3>Accordion / Z-Fold</h3>
+                            <p>Zig-zag folding. Excellent for separating different languages clearly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Booklets -->
+            <div id="booklets" class="tab-content">
+                <div class="material-grid">
+                    <div class="material-card">
+                        <div class="mat-img-wrapper">
+                            <!-- 请准备 images/format-saddle.webp -->
+                            <img src="images/format-saddle.webp" class="mat-img" onerror="this.src='https://placehold.co/300x200/eee/555?text=Saddle'">
+                        </div>
+                        <div class="mat-info">
+                            <h3>Saddle Stitch</h3>
+                            <p>Stapled spine. Most economical binding for 8-64 pages. Standard for user manuals.</p>
+                        </div>
+                    </div>
+                    <div class="material-card">
+                        <div class="mat-img-wrapper">
+                            <!-- 请准备 images/format-perfect-bound.webp -->
+                            <img src="images/format-perfect-bound.webp" class="mat-img" onerror="this.src='https://placehold.co/300x200/eee/555?text=Perfect+Bound'">
+                        </div>
+                        <div class="mat-info">
+                            <h3>Perfect Bound</h3>
+                            <p>Glued spine (like a paperback book). For premium catalogs with 60+ pages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 3: Cards -->
+            <div id="cards" class="tab-content">
+                <div class="material-grid">
+                    <div class="material-card">
+                        <div class="mat-img-wrapper">
+                            <!-- 请准备 images/format-hang-tag.webp -->
+                            <img src="images/format-hang-tag.webp" class="mat-img" onerror="this.src='https://placehold.co/300x200/eee/555?text=Hang+Tag'">
+                        </div>
+                        <div class="mat-info">
+                            <h3>Hang Tags</h3>
+                            <p>Custom shapes with punch holes. String options available. Essential for retail branding.</p>
+                        </div>
+                    </div>
+                    <div class="material-card">
+                        <div class="mat-img-wrapper">
+                            <!-- 请准备 images/format-warranty.webp -->
+                            <img src="images/format-warranty.webp" class="mat-img" onerror="this.src='https://placehold.co/300x200/eee/555?text=Card'">
+                        </div>
+                        <div class="mat-info">
+                            <h3>Warranty Cards</h3>
+                            <p>Premium 350gsm C1S or C2S cardstock. Smooth surface for writing serial numbers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Paper & Finishes (New Immersive Style) -->
+        <div class="finish-section">
+            <h2 class="section-title">Paper & Finishes</h2>
+            <p class="section-subtitle">Choose the perfect coating for your brand vibe.</p>
+            <div class="finish-grid">
+                <div class="finish-item">
+                    <div class="finish-img">
+                        <!-- 请准备 images/finish-glossy.webp -->
+                        <img src="images/manuals-paper-glossy.webp" onerror="this.src='https://placehold.co/200x150/eee/555?text=Glossy'">
+                    </div>
+                    <div class="finish-text">
+                        <strong>Glossy</strong>
+                        <p>Shiny & Vibrant</p>
+                    </div>
+                </div>
+                <div class="finish-item">
+                    <div class="finish-img">
+                        <!-- 请准备 images/finish-matte.webp -->
+                        <img src="images/manuals-paper-matte.webp" onerror="this.src='https://placehold.co/200x150/eee/555?text=Matte'">
+                    </div>
+                    <div class="finish-text">
+                        <strong>Matte</strong>
+                        <p>Soft & Modern</p>
+                    </div>
+                </div>
+                <div class="finish-item">
+                    <div class="finish-img">
+                        <!-- 请准备 images/finish-foil.webp -->
+                        <img src="images/manuals-paper-gold-foil.webp" onerror="this.src='https://placehold.co/200x150/eee/555?text=Gold+Foil'">
+                    </div>
+                    <div class="finish-text">
+                        <strong>Gold Foil</strong>
+                        <p>Luxury Metallic</p>
+                    </div>
+                </div>
+                <div class="finish-item">
+                    <div class="finish-img">
+                        <!-- 请准备 images/finish-uv.webp -->
+                        <img src="images/manuals-paper-spot-uv.webp" onerror="this.src='https://placehold.co/200x150/eee/555?text=Spot+UV'">
+                    </div>
+                    <div class="finish-text">
+                        <strong>Spot UV</strong>
+                        <p>Glossy Highlight</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. FAQ -->
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--primary-green);"></i> Can you prevent paper cracking on fold lines?</div>
+                    <div class="faq-a">Yes. For paper thicker than 128gsm or with dark background printing, we perform a <strong>Creasing</strong> process before folding to ensure a smooth, crack-free edge.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--primary-green);"></i> Do you check my design file?</div>
+                    <div class="faq-a">Yes. Our prepress engineers check every file for bleed, resolution, and <strong>Folding Logic</strong> (page order) to ensure the final product is correct.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--primary-green);"></i> What is the MOQ?</div>
+                    <div class="faq-a">For digital printing (small booklets), MOQ is 100 pcs. For offset printing (mass production), we recommend 1,000+ pcs for the best unit price.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-question-circle" style="color:var(--primary-green);"></i> What file format do you need?</div>
+                    <div class="faq-a">We prefer <strong>PDF (CMYK)</strong> with 3mm bleed. If you have source files (AI/InDesign), please outline fonts to avoid missing text issues.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Inquiry -->
+        <div id="inquiry">
+            <h2 class="section-title" style="margin-bottom:10px;">Get Print Quote</h2>
+            <p style="text-align:center; color:#666; margin-bottom:30px;">Send us your size, fold type, and paper choice.</p>
+            
+            <form action="https://formspree.io/f/mnneryyq" method="POST">
+                <input type="hidden" name="source" value="Manuals Detail Page">
+                
+                <div class="form-row">
+                    <input type="email" name="email" class="form-input" placeholder="Business Email *" required>
+                    <input type="text" name="name" class="form-input" placeholder="Your Name">
+                </div>
+                
+                <textarea name="message" class="form-input" placeholder="E.g., 2000 pcs, A4 folded to A5, 128gsm art paper..." style="height:120px; margin-bottom:20px;"></textarea>
+                
+                <button type="submit" class="btn-primary" style="width:100%;">Send Inquiry Now</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer style="text-align:center; padding:40px; color:#999; font-size:0.9rem; margin-top:50px;">
+        &copy; 2025 Caihe Tech. <a href="index.html" style="color:var(--primary-green);">Back to Home</a>
+    </footer>
+
+    <script>
+        function switchTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
