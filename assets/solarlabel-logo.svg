@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 82" role="img" aria-labelledby="title desc">
+  <title id="title">Solarlabel</title>
+  <desc id="desc">Solarlabel sun-shaped brand logo</desc>
+  <defs>
+    <linearGradient id="sun" x1="10" x2="66" y1="12" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd84d"/>
+      <stop offset="0.55" stop-color="#ffad1f"/>
+      <stop offset="1" stop-color="#e42b22"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(7 7)">
+      <path d="M34 0v10M34 58v10M0 34h10M58 34h10M10 10l7 7M51 51l7 7M58 10l-7 7M17 51l-7 7" stroke="#ffb21e" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="34" cy="34" r="25" fill="url(#sun)"/>
+      <path d="M22 40h24M22 31h24M22 49h24" stroke="#07111e" stroke-width="4" stroke-linecap="round"/>
+      <path d="M20 54h28" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(90 18)">
+      <text x="0" y="32" fill="#101722" font-family="Archivo, Barlow, Arial, sans-serif" font-size="36" font-weight="900" letter-spacing="-0.5">solarlabel</text>
+      <rect x="1" y="45" width="68" height="5" rx="2.5" fill="#e42b22"/>
+      <rect x="76" y="45" width="54" height="5" rx="2.5" fill="#f8c400"/>
+      <text x="143" y="49" fill="#64748b" font-family="Barlow, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">PV + BESS LABEL KITS</text>
+    </g>
+  </g>
+</svg>

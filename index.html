@@ -1,552 +1,483 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <title>Caihe Tech | Custom Labels & Packaging Machinery Factory</title>
-    <meta name="description" content="One-stop manufacturer for Custom Roll Labels and Packaging Machines. Powered by HP Indigo 25K & Heidelberg. ISO 9001 & FSC Certified Factory in Dongguan.">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solarlabel | Australia PV &amp; Battery Warning Label Kits</title>
+    <meta
+      name="description"
+      content="Solarlabel manufactures Australia-focused PV and battery warning label kits for solar installers, wholesalers and OEM projects."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&amp;family=Barlow:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Solarlabel home">
+        <img src="assets/solarlabel-logo.svg" alt="Solarlabel logo">
+      </a>
 
-    <style>
-        /* --- 基础设置 --- */
-        :root {
-            --primary-green: #00b894; 
-            --deep-blue: #2d3436; 
-            --accent-blue: #0984e3;
-            --light-bg: #f5f6fa;
-            --white: #ffffff;
-            --nav-height: 60px;
-        }
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+      <nav class="main-nav" data-nav>
+        <a href="#products">Products</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#materials">Materials</a>
+        <a href="#customers">Customers</a>
+        <a href="#resources">Resources</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0; padding: 0; color: var(--deep-blue); background: var(--white);
-            overflow-x: hidden; line-height: 1.6;
-        }
-
-        h1, h2, h3, .logo-font { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-
-        /* --- 1. Top Bar --- */
-        .top-bar {
-            background-color: #111; color: rgba(255,255,255,0.8);
-            padding: 8px 5%; font-size: 0.75rem; display: flex;
-            justify-content: space-between; align-items: center;
-        }
-        .top-info span { margin-right: 20px; display: inline-flex; align-items: center; gap: 6px; }
-        .top-info i { color: var(--primary-green); font-size: 0.9rem; }
-        .top-social a { color: rgba(255,255,255,0.6); margin-left: 15px; font-size: 1rem; transition:0.3s; }
-        .top-social a:hover { color:white; }
-
-        /* --- 2. Navigation --- */
-        header {
-            background: rgba(255,255,255,0.98); box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            position: sticky; top: 0; z-index: 1000; height: var(--nav-height);
-            display: flex; align-items: center; padding: 0 5%; justify-content: space-between; backdrop-filter: blur(10px);
-        }
-        .logo { font-size: 24px; font-weight: 700; color: var(--deep-blue); text-decoration: none; display: flex; align-items: center; gap: 8px; z-index: 1002; letter-spacing: -0.5px; }
-        .logo span { color: var(--primary-green); }
-        .hamburger { display: none; font-size: 24px; cursor: pointer; z-index: 1002; color: var(--deep-blue); padding: 5px; }
-        
-        .nav-menu { display: flex; gap: 30px; align-items: center; }
-        .nav-item { text-decoration: none; color: var(--deep-blue); font-weight: 600; font-size: 0.9rem; position: relative; padding: 5px 0; }
-        .nav-item:hover { color: var(--primary-green); }
-        .cta-btn { background: var(--primary-green); color: white; padding: 10px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; }
-        .cta-btn:hover { background: #009e7e; box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3); }
-
-        /* --- 3. Hero Slider --- */
-        .hero-slider { position: relative; height: 600px; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background: #000; }
-        .slide-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: opacity 1.5s ease-in-out; opacity: 0; z-index: 1; }
-        .slide-bg.active { opacity: 0.6; }
-        
-        .hero-content { position: relative; z-index: 3; max-width: 900px; padding: 20px; width: 100%; animation: slideUp 1s ease-out; }
-        @keyframes slideUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
-
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.3rem; margin-bottom: 40px; font-weight: 300; opacity: 0.95; letter-spacing: 0.5px; }
-
-        .hero-btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .hero-btn { padding: 15px 35px; border-radius: 4px; font-weight: bold; text-decoration: none; min-width: 160px; transition: 0.3s; }
-        .btn-fill { background: var(--primary-green); color: white; border: 2px solid var(--primary-green); }
-        .btn-fill:hover { background: transparent; }
-        .btn-border { border: 2px solid white; color: white; }
-        .btn-border:hover { background: white; color: black; }
-
-        /* --- 4. Trust Bar (认证条 - 优化版) --- */
-        .trust-bar { 
-            background: #fff; padding: 40px 5%; border-bottom: 1px solid #eee; 
-        }
-        .trust-grid { 
-            max-width: 1000px; margin: 0 auto; 
-            display: grid; grid-template-columns: repeat(4, 1fr); 
-            gap: 40px; align-items: center; justify-items: center;
-        }
-        .trust-logo { 
-            max-height: 85px; /* 放大尺寸 */
-            width: auto; max-width: 100%;
-            object-fit: contain; 
-            opacity: 0.8; /* 默认更清晰 */
-            filter: grayscale(100%); /* 默认保持专业灰度，显得稳重 */
-            transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-            cursor: pointer;
-        }
-        /* 鼠标放上去变彩色 + 放大 */
-        .trust-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
-
-        /* --- 5. Products Grid (空间优化版) --- */
-        .section-padding { padding: 80px 5%; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header span { color: var(--primary-green); font-weight: 700; letter-spacing: 2px; font-size: 0.85rem; }
-        .section-header h2 { font-size: 2.5rem; color: var(--deep-blue); margin-top: 10px; }
-
-        .products-container { display: grid; gap: 30px; grid-template-columns: 1fr; }
-        @media (min-width: 1024px) { .products-container { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 600px) and (max-width: 1023px) { .products-container { grid-template-columns: repeat(2, 1fr); } }
-
-        .product-card { 
-            background: white; border: 1px solid #eee; 
-            border-radius: 16px; /* 更大的圆角，更现代 */
-            overflow: hidden; transition: 0.4s; position: relative; cursor: pointer; 
-        }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--primary-green); }
-        
-        .card-badge { position: absolute; top: 15px; left: 15px; background: var(--deep-blue); color: white; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; z-index: 10; text-transform: uppercase; }
-        .badge-machine { background: var(--accent-blue); }
-        
-        /* 图片区域优化：增加背景色，减少留白 */
-        .product-img { 
-            height: 280px; /* 增加高度 */
-            background: #f4f6f8; /* 浅灰色背景，突出产品 */
-            display: flex; align-items: center; justify-content: center; 
-            overflow: hidden; padding: 0; /* 去掉 padding，让图片更大 */
-        }
-        .product-img img { 
-            width: 100%; height: 100%; 
-            object-fit: cover; /* 稍微裁切以填满空间，视觉更好 */
-            transition: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-        }
-        .product-card:hover .product-img img { transform: scale(1.1); } /* 放大特效 */
-        
-        .product-info { padding: 25px; text-align: center; }
-        .product-info h3 { margin: 0 0 8px; font-size: 1.4rem; font-weight: 700; }
-        .product-info p { font-size: 0.95rem; color: #666; margin: 0; }
-
-        /* --- 6. Factory Power --- */
-        .factory-section { background: var(--deep-blue); color: white; padding: 80px 5%; margin-top: 80px; position: relative; overflow: hidden; }
-        .factory-wrapper { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
-        .factory-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .factory-text p { font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 30px; }
-        
-        .power-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
-        .power-grid h4 { color: var(--primary-green); margin-bottom: 15px; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
-        .power-grid ul { list-style: none; padding: 0; margin: 0; }
-        .power-grid li { margin-bottom: 10px; font-size: 0.95rem; color: #ddd; display: flex; align-items: center; gap: 10px; }
-        .power-grid i { color: var(--accent-blue); font-size: 0.8rem; }
-
-        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; }
-        .stat-item h3 { font-size: 2rem; color: white; margin: 0; }
-        .stat-item span { font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .factory-img img { border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid #444; }
-
-        /* --- 7. Our Team --- */
-        .team-section { padding: 80px 5%; background: white; text-align: center; }
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto 0; }
-        .team-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; transition: 0.3s; }
-        .team-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .team-img { height: 250px; background: #eee; overflow: hidden; }
-        .team-img img { width: 100%; height: 100%; object-fit: cover; }
-        .team-info { padding: 20px; }
-        .team-info h3 { margin: 0 0 5px; font-size: 1.2rem; }
-        .team-info p { margin: 0; color: #666; font-size: 0.9rem; }
-        
-        /* --- 8. Trusted By (客户Logo - 放大版) --- */
-        .clients-section { padding: 80px 5%; background: var(--light-bg); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-        .logo-grid { 
-            display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; 
-            max-width: 1200px; margin: 40px auto 0; align-items: center;
-        }
-        .client-logo { 
-            height: 60px; /* 放大 Logo */
-            object-fit: contain; 
-            /* 取消灰度，全彩显示 */
-            filter: none; opacity: 0.8; 
-            transition: 0.3s; 
-        }
-        .client-logo:hover { opacity: 1; transform: scale(1.1); }
-
-        /* --- 9. Testimonials (头像版) --- */
-        .reviews-section { background: white; padding: 80px 5%; }
-        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .review-card { background: var(--light-bg); padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-        .stars { color: #f1c40f; margin-bottom: 15px; }
-        .review-text { font-style: italic; color: #555; margin-bottom: 20px; font-size: 1rem; }
-        .reviewer { display: flex; align-items: center; gap: 15px; }
-        
-        /* 头像样式：如果没有图片，用颜色块代替 */
-        .avatar-circle { 
-            width: 50px; height: 50px; border-radius: 50%; 
-            background: var(--primary-green); color: white; 
-            display: flex; align-items: center; justify-content: center; 
-            font-weight: bold; font-size: 1.2rem;
-        }
-
-        .reviewer-info strong { display: block; color: var(--deep-blue); font-size: 0.95rem; }
-        .reviewer-info span { font-size: 0.85rem; color: #888; }
-
-        /* --- 10. Blog --- */
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .blog-item { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); cursor: pointer; transition: 0.3s; }
-        .blog-item:hover { transform: translateY(-5px); }
-        .blog-img-box { height: 220px; }
-        .blog-img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .blog-text { padding: 25px; }
-        .blog-link { color: var(--primary-green); font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; }
-
-        /* Subscribe & Footer */
-        .subscribe-bar { background: linear-gradient(135deg, #2d3436 0%, #000000 100%); color: white; padding: 80px 5%; text-align: center; }
-        .sub-container { max-width: 600px; margin: 0 auto; }
-        .sub-form { display: flex; gap: 10px; margin-top: 30px; }
-        .sub-input { flex: 1; padding: 15px; border-radius: 4px; border: none; font-size: 1rem; outline: none; }
-        .sub-btn { background: var(--primary-green); color: white; border: none; padding: 0 35px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .sub-btn:hover { background: #009e7e; transform: scale(1.05); }
-
-        footer { background: #111; color: #888; padding: 70px 5% 30px; font-size: 0.9rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .footer-links a { display: block; padding: 6px 0; color: #888; text-decoration: none; transition: 0.3s; }
-        .footer-links a:hover { color: var(--primary-green); padding-left: 5px; }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .top-bar { justify-content: center; } .top-social { display: none; }
-            .hamburger { display: block; }
-            .nav-menu { position: fixed; top: var(--nav-height); left: 0; width: 100%; height: 0; background: white; flex-direction: column; overflow: hidden; transition: 0.3s ease-in-out; box-shadow: 0 10px 20px rgba(0,0,0,0.05); gap: 0; padding: 0; }
-            .nav-menu.active { height: 280px; }
-            .nav-item { width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid #f5f5f5; }
-            .nav-menu .cta-btn { margin: 20px auto; width: 80%; }
-            .hero-slider { height: 500px; } .hero h1 { font-size: 2.5rem; } .hero-btn { width: 100%; margin-bottom: 10px; }
-            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } 
-            .trust-logo { height: 60px; }
-            .factory-wrapper { grid-template-columns: 1fr; }
-            .power-grid { grid-template-columns: 1fr; }
-            .team-grid { grid-template-columns: 1fr; }
-            .logo-grid { gap: 30px; }
-            .client-logo { height: 40px; }
-            .sub-form { flex-direction: column; } .sub-btn { width: 100%; padding: 15px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="top-bar">
-        <div class="top-info">
-            <span><a href="mailto:qq280709358@gmail.com" style="color:inherit;text-decoration:none;"><i class="fas fa-envelope"></i> qq280709358@gmail.com</a></span>
-            <span><a href="tel:+8619120719547" style="color:inherit;text-decoration:none;"><i class="fab fa-whatsapp"></i> +86 191 2071 9547</a></span>
-        </div>
-        <div class="top-social">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-        </div>
-    </div>
-
-    <header>
-        <a href="#" class="logo">
-            <i class="fas fa-cube"></i> CAIHE<span>TECH</span>
-        </a>
-        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-        <nav class="nav-menu" id="navMenu">
-            <a href="#products" class="nav-item" onclick="toggleMenu()">Products</a>
-            <a href="blog.html" class="nav-item" onclick="toggleMenu()">Blog</a>
-            <a href="factory.html" class="nav-item" onclick="toggleMenu()">Factory</a>
-            <button class="cta-btn" onclick="openContact(); toggleMenu()">Get Quote</button>
-        </nav>
+      <a class="header-cta" href="mailto:Jerry@solarlabel.top?subject=Solarlabel%20quote%20request">Get Quote</a>
     </header>
 
-    <section class="hero-slider">
-        <div class="slide-bg active" style="background-image: url('images/hero-banner-print.webp');"></div>
-        <div class="slide-bg" style="background-image: url('images/hero-banner-machine.webp');"></div>
-        
-        <div class="hero-content">
-            <h1>SCALE YOUR <br><span style="color:var(--primary-green)">PRODUCTION</span></h1>
-            <p>From <strong>Custom Labels</strong> to <strong>Automation Machinery</strong>.<br>Your One-Stop Manufacturing Partner in China.</p>
-            <div class="hero-btn-group">
-                <a href="#products" class="hero-btn btn-fill">Explore Products</a>
-                <button onclick="openContact()" class="hero-btn btn-border">Start Project</button>
+    <main id="top">
+      <section class="hero">
+        <img class="hero-bg" src="assets/photos/solar-install-stock.jpg" alt="Solar panel installation on a rooftop">
+        <div class="hero-shade"></div>
+        <div class="hero-inner">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Australia-focused solar labelling factory</p>
+            <h1>Solarlabel PV &amp; Battery Warning Label Kits</h1>
+            <p class="hero-lede">
+              Factory-direct supply for Australian installers, wholesalers and solar businesses that need
+              compliant wording, durable materials and stable repeat delivery.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="mailto:Jerry@solarlabel.top?subject=Send%20PV%20and%20Battery%20label%20kit%20list">Send Label List</a>
+              <a class="btn outline" href="https://wa.me/8619120719547?text=Hi%20Solarlabel%2C%20I%20need%20Australian%20solar%20label%20kits." target="_blank" rel="noreferrer">
+                WhatsApp +86 191 2071 9547
+              </a>
             </div>
-        </div>
-    </section>
+            <div class="hero-points" aria-label="Solarlabel strengths">
+              <span>SAA guidance aligned</span>
+              <span>PV + BESS kits</span>
+              <span>OEM packing</span>
+              <span>Fast repeat supply</span>
+            </div>
+          </div>
 
-    <!-- 1. Trust Bar (认证 - 放大且默认可见) -->
-    <div class="trust-bar">
-        <div class="trust-grid">
-            <img src="images/cert-iso-9001.webp" alt="ISO 9001" class="trust-logo">
-            <img src="images/cert-fsc.webp" alt="FSC" class="trust-logo">
-            <img src="images/cert-ul.webp" alt="UL" class="trust-logo">
-            <img src="images/cert-ce.webp" alt="CE" class="trust-logo">
+          <aside class="hero-compliance reveal" aria-label="Solarlabel compliance support">
+            <div class="hero-compliance-head">
+              <span class="sun-dot"></span>
+              <strong>Inspection-ready support</strong>
+            </div>
+            <div class="hero-compliance-list">
+              <div>
+                <span>01</span>
+                <p>Check SAA checklist and labelling support before kit setup.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <p>Match PV, Battery/BESS, inverter and project-specific label schedules.</p>
+              </div>
+              <div>
+                <span>03</span>
+                <p>Pack by SKU, installer set, customer brand or repeat order list.</p>
+              </div>
+            </div>
+            <a class="text-link" href="#resources">View compliance documents</a>
+          </aside>
         </div>
-    </div>
+      </section>
 
-    <!-- 2. Products Grid (圆角 + 满版图片) -->
-    <section id="products" class="section-padding">
-        <div class="section-header">
-            <span>OUR ECOSYSTEM</span>
-            <h2>Comprehensive Solutions</h2>
-            <p style="color:#666; max-width: 600px; margin: 10px auto;">We Print. We Build Machines. We Solve Problems.</p>
+      <section class="trust-band" aria-label="Quick buyer signals">
+        <div>
+          <strong>Australia only</strong>
+          <span>Built around Australian solar installation wording</span>
+        </div>
+        <div>
+          <strong>Factory direct</strong>
+          <span>Stable pricing and repeat batch control</span>
+        </div>
+        <div>
+          <strong>UV resistant</strong>
+          <span>Outdoor material options for switchboards and equipment</span>
+        </div>
+        <div>
+          <strong>Custom ready</strong>
+          <span>Brand, inverter and project-specific label schedules</span>
+        </div>
+      </section>
+
+      <section class="section products-section" id="products">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Kit families</p>
+          <h2>PV and Battery kits, plus custom SKU builds.</h2>
+          <p>
+            Australian buyers often compare ready-to-buy kits and inverter-specific bundles. Solarlabel can
+            supply standard kits, then adjust wording, count, material and packaging for your market.
+          </p>
         </div>
 
-        <div class="products-container">
-            <div class="product-card" onclick="window.location.href='roll-labels.html'">
-                <span class="card-badge">Printing</span>
-                <div class="product-img"><img src="images/product-roll-labels.webp" alt="Roll Labels"></div>
-                <div class="product-info"><h3>Custom Roll Labels</h3><p>Optimized for Automatic Labeling</p></div>
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img src="assets/photos/photo-grid-kit.jpg" alt="PV solar label kit layout">
             </div>
-            <div class="product-card" onclick="window.location.href='stickers.html'">
-                <span class="card-badge">Printing</span>
-                <div class="product-img"><img src="images/product-stickers.webp" alt="Stickers"></div>
-                <div class="product-info"><h3>Custom Stickers</h3><p>Die-cut & Kiss-cut Branding</p></div>
+            <div class="product-body">
+              <span class="tag red">SL-PV-GRID</span>
+              <h3>Grid Connect PV Label Kits</h3>
+              <p>
+                Site information, PV array, DC voltage, disconnection point, shutdown, cable and switchboard labels
+                for Australian grid-connected solar installations.
+              </p>
+              <ul class="feature-list">
+                <li>PV site map and site information labels</li>
+                <li>PV string disconnection point labels</li>
+                <li>Hazardous DC voltage and switchboard warning labels</li>
+                <li>Bulk packs, installer packs or OEM-labelled bags</li>
+              </ul>
             </div>
-            <div class="product-card" onclick="window.location.href='manuals.html'">
-                <span class="card-badge">Printing</span>
-                <div class="product-img"><img src="images/product-manuals.webp" alt="Manuals"></div>
-                <div class="product-info"><h3>Instruction Manuals</h3><p>Booklets & Folded Guides</p></div>
-            </div>
-            <div class="product-card" onclick="window.location.href='die-cutter.html'">
-                <span class="card-badge badge-machine">Machine</span>
-                <div class="product-img"><img src="images/product-die-cutter.webp" alt="Die Cutter"></div>
-                <div class="product-info"><h3>Die-cutting Machines</h3><p>Make Your Own Stickers</p></div>
-            </div>
-            <div class="product-card" onclick="window.location.href='labeling-machine.html'">
-                <span class="card-badge badge-machine">Machine</span>
-                <div class="product-img"><img src="images/product-labeling-machine.webp" alt="Labeling Machine"></div>
-                <div class="product-info"><h3>Labeling Machines</h3><p>High Speed Application</p></div>
-            </div>
-            <div class="product-card" onclick="window.location.href='screen-printer.html'">
-                <span class="card-badge badge-machine">Machine</span>
-                <div class="product-img"><img src="images/product-screen-printer.webp" alt="Screen Printer"></div>
-                <div class="product-info"><h3>Screen Printers</h3><p>Direct Printing Solutions</p></div>
-            </div>
-        </div>
-    </section>
+          </article>
 
-    <!-- 3. Factory Power -->
-    <section class="factory-section">
-        <div class="factory-wrapper">
-            <div class="factory-text">
-                <span>PRODUCTION POWERHOUSE</span>
-                <h2>World-Class Production Lines</h2>
-                <p>We combine the best of both worlds: <strong>Top-tier Printing Equipment</strong> for your labels and <strong>Advanced Machinery Manufacturing</strong> for your automation needs.</p>
-                
-                <div class="power-grid">
-                    <div>
-                        <h4 style="color:var(--primary-green); margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:10px;">Printing Fleet</h4>
-                        <ul style="list-style:none; padding:0; color:#ddd; font-size:0.9rem;">
-                            <li><i class="fas fa-check"></i> HP Indigo 25K (Digital)</li>
-                            <li><i class="fas fa-check"></i> Heidelberg XL 105 (Offset)</li>
-                            <li><i class="fas fa-check"></i> 10+ Flexo Lines</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 style="color:var(--accent-blue); margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:10px;">Machine Assembly</h4>
-                        <ul style="list-style:none; padding:0; color:#ddd; font-size:0.9rem;">
-                            <li><i class="fas fa-cog"></i> Digital Die-Cutters</li>
-                            <li><i class="fas fa-cog"></i> Auto Labeling Lines</li>
-                            <li><i class="fas fa-cog"></i> Screen Printers</li>
-                        </ul>
-                    </div>
-                </div>
+          <article class="product-card reveal">
+            <div class="product-image">
+              <img src="assets/photos/photo-bess-layout.jpg" alt="Battery and BESS label kit layout">
+            </div>
+            <div class="product-body">
+              <span class="tag green">SL-BESS</span>
+              <h3>Battery / BESS Label Kits</h3>
+              <p>
+                Battery safety label kits covering ES signs, restricted access, toxic fumes, shutdown procedures,
+                isolators and current or voltage information labels.
+              </p>
+              <ul class="feature-list green">
+                <li>Battery system identification labels</li>
+                <li>Restricted access and PPE warning labels</li>
+                <li>Shutdown procedure labels</li>
+                <li>Custom BESS wording and manufacturer packs</li>
+              </ul>
+            </div>
+          </article>
+        </div>
 
-                <div class="stat-grid">
-                    <div class="stat-item"><h3>18+</h3><span>Years Exp.</span></div>
-                    <div class="stat-item"><h3>20k</h3><span>Sqm Factory</span></div>
-                    <div class="stat-item"><h3>ISO</h3><span>9001:2015</span></div>
-                </div>
-                <button class="cta-btn" onclick="openContact()" style="background:white; color:var(--deep-blue); margin-top:30px;">Book Video Factory Tour</button>
-            </div>
-            <div class="factory-img">
-                <img src="images/factory-overview.webp" alt="Factory Machine">
-            </div>
+        <div class="sku-strip reveal" aria-label="Custom kit options">
+          <div>
+            <strong>AC solar kits</strong>
+            <span>Switchboard and AC supply labels</span>
+          </div>
+          <div>
+            <strong>Inverter kits</strong>
+            <span>GoodWe, Sigenergy and brand-specific schedules</span>
+          </div>
+          <div>
+            <strong>Plaques</strong>
+            <span>Engraved, rigid, reflective or laminated options</span>
+          </div>
+          <div>
+            <strong>Bulk SKUs</strong>
+            <span>32pc, 26pc and custom-count kit packing</span>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- 4. Our Expert Team -->
-    <div class="team-section">
-        <div class="section-header">
-            <span>OUR PEOPLE</span>
-            <h2>Expert Team Support</h2>
-            <p style="color:#666;">Real people behind the machines. We provide lifetime technical support.</p>
+      <section class="section intro-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Built for inspection-ready projects</p>
+          <h2>Small labels. Big jobsite consequences.</h2>
+          <p>
+            Australian solar buyers do not just need stickers. They need the right wording, the right material,
+            the right kit count and repeatable packing that keeps installation teams moving.
+          </p>
         </div>
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="team-img"><img src="images/team-engineer.webp" alt="Engineer"></div>
-                <div class="team-info">
-                    <h3>Technical Engineers</h3>
-                    <p>10+ Years Experience. Ready for remote debugging.</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-img"><img src="images/team-sales.webp" alt="Sales"></div>
-                <div class="team-info">
-                    <h3>Sales Consultants</h3>
-                    <p>Fluent English. 24/7 Response time.</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-img"><img src="images/team-qc.webp" alt="QC"></div>
-                <div class="team-info">
-                    <h3>Quality Control</h3>
-                    <p>Strict ISO 9001 inspection before shipping.</p>
-                </div>
-            </div>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4z"></path><path d="M9 12l2 2 4-5"></path></svg>
+            <h3>Current wording</h3>
+            <p>PV, battery, shutdown, disconnection and switchboard labels arranged for Australian projects.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16"></path><path d="M6 8l2-4h8l2 4"></path><path d="M7 8v12"></path><path d="M17 8v12"></path><path d="M5 20h14"></path></svg>
+            <h3>Outdoor durability</h3>
+            <p>UV-resistant label, plaque and reflective options for exposed solar equipment areas.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v10H3z"></path><path d="M14 11h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
+            <h3>Fast repeat supply</h3>
+            <p>Bulk kits can be packed by set, project, customer, inverter family or your own SKU code.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V8l7-4 7 4v13"></path><path d="M9 21v-6h6v6"></path><path d="M8 10h1"></path><path d="M12 10h1"></path><path d="M16 10h1"></path></svg>
+            <h3>Factory control</h3>
+            <p>Direct production keeps material, colour, size and packing consistent between orders.</p>
+          </article>
         </div>
-    </div>
+      </section>
 
-    <!-- 5. Testimonials (添加头像) -->
-    <section class="reviews-section">
-        <div class="section-header">
-            <span>TESTIMONIALS</span>
-            <h2>What Our Clients Say</h2>
+      <section class="section materials-section" id="materials">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Real materials</p>
+          <h2>Show the product clearly. Let the labels do the selling.</h2>
+          <p>
+            These are actual Solarlabel samples and packed kits. The layout now keeps each photo visible instead
+            of cropping away important label details.
+          </p>
         </div>
-        <div class="review-grid">
-            <div class="review-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="review-text">"The labeling machine works perfectly with the roll labels they printed. One-stop solution saved me so much time!"</p>
-                <div class="reviewer">
-                    <div class="avatar-circle">J</div>
-                    <div class="reviewer-info"><strong>J***y (Canada)</strong><span>Verified Purchase</span></div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="review-text">"Very good factory. Production time is fast. The afternoon delivery, product quality is very good."</p>
-                <div class="reviewer">
-                    <div class="avatar-circle" style="background:#0984e3;">S</div>
-                    <div class="reviewer-info"><strong>S***n (USA)</strong><span>Verified Purchase</span></div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="review-text">"Great and good quality holographic stickers. Fast turnaround and shipping. Will order again."</p>
-                <div class="reviewer">
-                    <div class="avatar-circle" style="background:#e67e22;">C</div>
-                    <div class="reviewer-info"><strong>C***p (UK)</strong><span>Verified Purchase</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 6. Trusted By (Logo Wall - 放大且全彩) -->
-    <div class="clients-section">
-        <p style="text-align:center; color:#999; font-weight:600; letter-spacing:1px; margin-bottom:30px;">TRUSTED BY GLOBAL BRANDS</p>
-        <div class="logo-grid">
-            <img src="images/client-logo-coca-cola.webp" class="client-logo" alt="Client">
-            <img src="images/client-logo-johnson.webp" class="client-logo" alt="Client">
-            <img src="images/client-logo-nestle.webp" class="client-logo" alt="Client">
-            <img src="images/client-logo-pg.webp" class="client-logo" alt="Client">
-            <img src="images/client-logo-unilever.webp" class="client-logo" alt="Client">
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/photo-grid-kit.jpg" alt="PV warning label kit full layout">
+            <figcaption>PV warning kit with site information, disconnection and DC voltage labels.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/photo-bess-layout.jpg" alt="Battery label kit on work table">
+            <figcaption>Battery / BESS kit layout for energy storage systems.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/photo-warning-plaque-layout.jpg" alt="Warning plaques and switchboard labels">
+            <figcaption>Rigid warning plaques, isolator markers and switch labels.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/photo-reflective-green.png" alt="Green reflective label material">
+            <figcaption>Reflective green material option for identification labels.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/photo-packaged-kits.jpg" alt="Packaged PV and battery label kits">
+            <figcaption>Pre-packed kits for installer dispatch and repeat orders.</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/photos/photo-installed-label-sample.jpg" alt="Installed shutdown and PV array label samples">
+            <figcaption>Installed shutdown procedure and PV array label samples.</figcaption>
+          </figure>
         </div>
-    </div>
+      </section>
 
-    <!-- Blog & Subscribe -->
-    <section id="solutions" class="section-padding solutions-bg" style="background:#fff;">
-        <div class="section-header">
-            <span>LATEST NEWS</span>
-            <h2>Industry Knowledge</h2>
+      <section class="split-section" id="compliance">
+        <div class="split-media reveal">
+          <img src="assets/photos/solar-worker-stock.jpg" alt="Solar panels on a commercial rooftop">
         </div>
-        <div class="blog-grid">
-            <article class="blog-item" onclick="window.location.href='blog/article-001.html'">
-                <div class="blog-img-box"><img src="images/blog-hero-bopp-vs-paper-material.webp" alt="Roll vs Sheet"></div>
-                <div class="blog-text">
-                    <h3>Roll Labels vs. Sheet Labels</h3>
-                    <p style="font-size:0.9rem; color:#666;">Which format saves you money? A complete guide.</p>
-                    <span class="blog-link">Read More <i class="fas fa-arrow-right"></i></span>
-                </div>
+        <div class="split-copy reveal">
+          <p class="eyebrow">Compliance first</p>
+          <h2>Made to support current SAA labelling guidance.</h2>
+          <p>
+            Solarlabel manufactures to customer-supplied label schedules, artwork, samples or project
+            specifications, with wording built around Australian solar labelling requirements.
+          </p>
+          <div class="compliance-grid">
+            <article>
+              <strong>AS/NZS focused</strong>
+              <span>PV, battery and grid-connected project wording support.</span>
             </article>
-            <article class="blog-item" onclick="window.location.href='blog.html'">
-                <div class="blog-img-box"><img src="images/blog-hero-solving-bubble-issues.webp" alt="Tips"></div>
-                <div class="blog-text">
-                    <h3>Solving Bubble Issues</h3>
-                    <p style="font-size:0.9rem; color:#666;">5 tips to fix bubbles in automatic labeling.</p>
-                    <span class="blog-link">Read More <i class="fas fa-arrow-right"></i></span>
-                </div>
+            <article>
+              <strong>English wording</strong>
+              <span>Clear, readable labels for Australian worksites.</span>
             </article>
-            <article class="blog-item" onclick="window.location.href='blog.html'">
-                <div class="blog-img-box"><img src="images/blog-hero-roll-vs-sheet-labels.webp" alt="Material"></div>
-                <div class="blog-text">
-                    <h3>BOPP vs. Paper Material</h3>
-                    <p style="font-size:0.9rem; color:#666;">Choosing the right material for frozen food.</p>
-                    <span class="blog-link">Read More <i class="fas fa-arrow-right"></i></span>
-                </div>
+            <article>
+              <strong>Indelible options</strong>
+              <span>Printed, laminated, engraved and reflective constructions.</span>
             </article>
+            <article>
+              <strong>Checklist support</strong>
+              <span>Latest SAA labelling support checked during kit setup.</span>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class="subscribe-bar">
-        <div class="sub-container">
-            <h2>Unlock Packaging Efficiency Secrets</h2>
-            <p style="color:#ccc; margin-bottom: 20px;">Join 3,000+ industry leaders. Get our monthly guide on cost-saving strategies.</p>
-            <form class="sub-form" action="https://formspree.io/f/mnneryyq" method="POST">
-                <input type="email" name="email" class="sub-input" placeholder="Enter your business email" required>
-                <button type="submit" class="sub-btn">Subscribe Now</button>
-            </form>
-            <p style="font-size: 0.75rem; color: #777; margin-top: 15px;">* We respect your inbox. No spam.</p>
+      <section class="section resources-section" id="resources">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Compliance documents</p>
+          <h2>Reference files customers can check before ordering.</h2>
+          <p>
+            Put the useful PDFs close to the product conversation: checklist, SAA support, installation guidance
+            and common labelling issue references. It helps buyers see that Solarlabel is not only printing labels,
+            but helping them prepare inspection-ready kits.
+          </p>
         </div>
-    </section>
+        <div class="resource-grid">
+          <article class="resource-card reveal">
+            <span>Checklist</span>
+            <h3>SAA labelling checklist for grid-connected systems</h3>
+            <p>Use it to review key label locations and inspection points before confirming a PV kit schedule.</p>
+            <div class="resource-actions">
+              <a href="assets/resources/saa-labelling-checklist-grid-connected-systems.pdf" target="_blank" rel="noreferrer">View online</a>
+              <a href="assets/resources/saa-labelling-checklist-grid-connected-systems.pdf" download>Download PDF</a>
+            </div>
+          </article>
+          <article class="resource-card reveal">
+            <span>SAA support</span>
+            <h3>SAA labelling support for grid-connected systems</h3>
+            <p>Reference document for wording, label purpose and project discussion with Australian customers.</p>
+            <div class="resource-actions">
+              <a href="assets/resources/saa-labelling-support-grid-connected-systems.pdf" target="_blank" rel="noreferrer">View online</a>
+              <a href="assets/resources/saa-labelling-support-grid-connected-systems.pdf" download>Download PDF</a>
+            </div>
+          </article>
+          <article class="resource-card reveal">
+            <span>Installation</span>
+            <h3>Solar label installation guidance</h3>
+            <p>Helpful for installers who want to understand how labels are applied and checked on site.</p>
+            <div class="resource-actions">
+              <a href="assets/resources/installation-guidelines.pdf" target="_blank" rel="noreferrer">View online</a>
+              <a href="assets/resources/installation-guidelines.pdf" download>Download PDF</a>
+            </div>
+          </article>
+          <article class="resource-card reveal">
+            <span>Fixing</span>
+            <h3>Label fixing instruction</h3>
+            <p>Shows practical label mounting and fixing details for stable field installation.</p>
+            <div class="resource-actions">
+              <a href="assets/resources/label-fixing-instruction.pdf" target="_blank" rel="noreferrer">View online</a>
+              <a href="assets/resources/label-fixing-instruction.pdf" download>Download PDF</a>
+            </div>
+          </article>
+          <article class="resource-card reveal">
+            <span>Issue reference</span>
+            <h3>Common battery labelling non-compliances</h3>
+            <p>Gives buyers a fast way to compare BESS label kits against real-world problem areas.</p>
+            <div class="resource-actions">
+              <a href="assets/resources/battery-labelling-non-compliances.pdf" target="_blank" rel="noreferrer">View online</a>
+              <a href="assets/resources/battery-labelling-non-compliances.pdf" download>Download PDF</a>
+            </div>
+          </article>
+        </div>
+        <p class="resource-note reveal">
+          These documents are provided as practical reference files. Final project requirements should be checked
+          against the current SAA guidance, applicable AS/NZS standards and local inspection requirements.
+        </p>
+      </section>
 
-    <footer id="about">
-        <div class="footer-grid">
+      <section class="section customers-section" id="customers">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Trust signals</p>
+          <h2>Customer projects, inverter families and SAA references in one place.</h2>
+          <p>
+            For public website wording, we keep this accurate: the logos below show customer or project examples
+            and the guidance sources we build around, not a claim of official endorsement.
+          </p>
+        </div>
+
+        <div class="logo-wall reveal">
+          <div class="logo-tile">
+            <img src="assets/logos/jc-energy-official.png" alt="JC Energy logo">
+            <span>JC Energy custom kits</span>
+          </div>
+          <div class="logo-tile">
+            <img src="assets/logos/luxco-energy.png" alt="LUXCO Energy logo">
+            <span>LUXCO Energy bulk packs</span>
+          </div>
+          <div class="logo-tile">
+            <img src="assets/logos/goodwe-logo.svg" alt="GoodWe logo">
+            <span>GoodWe project labels</span>
+          </div>
+          <div class="logo-tile">
+            <img src="assets/logos/sigenergy-logo.svg" alt="Sigenergy logo">
+            <span>Sigenergy custom plaques</span>
+          </div>
+          <div class="logo-tile standards">
+            <img src="assets/logos/saa-logo.png" alt="SAA Approvals logo">
+            <span>SAA labelling support reference</span>
+          </div>
+        </div>
+
+        <div class="feedback-grid">
+          <article class="feedback-card reveal">
+            <span>Buyer priority</span>
+            <p>"The biggest value is repeatable kits: same wording, same count, same packing every time."</p>
+          </article>
+          <article class="feedback-card reveal">
+            <span>Installer priority</span>
+            <p>"Labels need to be visible, durable and easy to sort on site, especially for PV and BESS jobs."</p>
+          </article>
+          <article class="feedback-card reveal">
+            <span>Wholesaler priority</span>
+            <p>"OEM bags and SKU control make it easier to supply installers without repacking each order."</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section factory-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Factory and packing</p>
+          <h2>Built for stable supply, not one-off samples.</h2>
+          <p>
+            Your website should prove you are a real factory. This section uses workshop-style product and packing
+            images, not just clean studio renders.
+          </p>
+        </div>
+        <div class="factory-grid">
+          <article class="factory-card reveal">
+            <img src="assets/photos/photo-mixed-finished-labels.jpg" alt="Finished warning labels">
             <div>
-                <span style="font-size:1.5rem; color:white; font-weight:700;">CAIHE<span style="color:var(--primary-green)">TECH</span></span>
-                <p>Since 2005. ISO Certified Factory.</p>
+              <h3>Finished label inspection</h3>
+              <p>Visual checks for print clarity, colour contrast and label grouping before packing.</p>
             </div>
-            <div class="footer-links">
-                <h4 style="color:white; margin-bottom:15px;">Products</h4>
-                <a href="roll-labels.html">Roll Labels</a><a href="labeling-machine.html">Labeling Machines</a><a href="screen-printer.html">Screen Printers</a>
+          </article>
+          <article class="factory-card reveal">
+            <img src="assets/photos/photo-packaged-kits.jpg" alt="Packed solar label kits">
+            <div>
+              <h3>Kit packing</h3>
+              <p>PV and battery kits can be packed by set, quantity, order or customer SKU.</p>
             </div>
-            <div class="footer-links">
-                <h4 style="color:white; margin-bottom:15px;">Contact</h4>
-                <a href="mailto:qq280709358@gmail.com">qq280709358@gmail.com</a>
-                <a href="tel:+8619120719547">+86 191 2071 9547</a>
-                <p>Dongguan, China</p>
+          </article>
+          <article class="factory-card reveal">
+            <img src="assets/photos/photo-safety-labels.jpg" alt="Safety warning label samples">
+            <div>
+              <h3>Material options</h3>
+              <p>Self-adhesive, rigid plaque, reflective and laminated options for outdoor installations.</p>
             </div>
+          </article>
         </div>
-        <div style="border-top:1px solid #333; margin-top:30px; padding-top:20px; text-align:center; color:#666; font-size:0.8rem;">
-            &copy; 2025 Caihe Tech. All Rights Reserved.
+      </section>
+
+      <section class="section faq-section" id="faq">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Quick answers for Australian buyers.</h2>
         </div>
+        <div class="faq-list">
+          <details class="reveal" open>
+            <summary>Can you make labels to the latest SAA requirements?</summary>
+            <p>Yes. We build kits around customer supplied schedules and the latest SAA labelling support documents for Australian solar projects.</p>
+          </details>
+          <details class="reveal">
+            <summary>Can you copy our existing kit or competitor SKU?</summary>
+            <p>Yes. Send a photo, PDF, artwork file or label list. We can match the kit count, wording, size, material and packaging style.</p>
+          </details>
+          <details class="reveal">
+            <summary>Do you supply both PV and Battery/BESS label kits?</summary>
+            <p>Yes. We supply grid connect PV kits, battery/BESS kits, AC solar labels, plaques and inverter-specific custom label packs.</p>
+          </details>
+          <details class="reveal">
+            <summary>Can you add our logo and pack under our brand?</summary>
+            <p>Yes. OEM labels, branded bags, customer SKU stickers and custom packing lists can be arranged for wholesalers and repeat buyers.</p>
+          </details>
+          <details class="reveal">
+            <summary>What information do you need for a quote?</summary>
+            <p>Send label artwork or samples, quantity, material preference, kit count, packing style and destination. We will reply with pricing and lead time.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-inner reveal">
+          <p class="eyebrow">Start with your label list</p>
+          <h2>Send your PV or Battery kit schedule. We will turn it into a factory quote.</h2>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:Jerry@solarlabel.top?subject=Solarlabel%20quote%20request">Jerry@solarlabel.top</a>
+            <a class="btn light" href="https://wa.me/8619120719547?text=Hi%20Solarlabel%2C%20I%20need%20a%20quote%20for%20Australian%20solar%20label%20kits." target="_blank" rel="noreferrer">
+              WhatsApp +86 191 2071 9547
+            </a>
+          </div>
+          <p class="domain">www.solarlabel.top</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Solarlabel</span>
+      <span>Australia-focused PV and Battery warning label kits</span>
     </footer>
 
-    <!-- Contact Modal -->
-    <div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; align-items:center; justify-content:center; padding:20px;" onclick="if(event.target==this)this.style.display='none'">
-        <div style="background:white; padding:30px; border-radius:10px; width:100%; max-width:400px; text-align:center; position:relative;">
-            <span onclick="document.getElementById('contactModal').style.display='none'" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
-            <h3 style="margin-bottom:20px;">Contact Us</h3>
-            <a href="https://wa.me/8619120719547" style="display:block; background:#25D366; color:white; padding:15px; border-radius:5px; text-decoration:none; margin-bottom:10px; font-weight:bold;">WhatsApp</a>
-            <a href="mailto:qq280709358@gmail.com" style="display:block; background:var(--primary-green); color:white; padding:15px; border-radius:5px; text-decoration:none; font-weight:bold;">Email Us</a>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('navMenu');
-            nav.style.height = (nav.style.height === '0px' || nav.style.height === '') ? '260px' : '0px';
-        }
-        function openContact() { document.getElementById('contactModal').style.display = 'flex'; }
-        
-        const slides = document.querySelectorAll('.slide-bg');
-        let current = 0;
-        setInterval(() => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        }, 4000);
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
